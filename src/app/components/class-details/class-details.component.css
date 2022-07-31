@@ -1,0 +1,126 @@
+.detail {
+  background-color: #F8F8F8;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #FF0336;
+}
+
+.move1 {
+  animation: bg1 5s infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation: bg1 5s infinite;
+}
+
+.move2 {
+  animation: bg2 3s infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation: bg2 3s infinite;
+}
+
+@keyframes bg1 {
+  0%   {left:5%; top: 54.5%;}
+  50%  {left:8%; top: 51.5%;}
+  100% {left:5%; top: 54.5%;}
+}
+
+@keyframes bg2 {
+  0%   {left:13%; top: 20%;}
+  50%  {left:14%; top: 15%;}
+  100% {left:13%; top: 20%;}
+}
+
+.container .row .data1,
+.data3,
+.data4 {
+  background-color: white;
+}
+
+div .leftColumn {
+  height: auto;
+}
+
+.data1{
+  margin-right: 3%;
+  width: 65%;
+}
+.data2{
+  width: 32%;
+}
+
+.data3 .title,
+.data4 .title {
+  position: relative;
+}
+
+.data3 .title:before,
+.data4 .title:before {
+  content : "";
+  position: absolute;
+  left    : 0;
+  bottom  : 0;
+  width   : 10%;
+  border-bottom: 4px solid #FF0336;
+}
+
+.contactbtn {
+  background-color: #FF0336;
+  color: white;
+  border-radius: 0;
+}
+
+.contactbtn:hover {
+  background-color: #DB163E;
+  color: white;
+}
+
+.contactbtn svg {
+  width: 25px;
+  fill: white;
+}
+
+.classBorder {
+  overflow: hidden;
+  transition: all 0.5s ease;
+  transition: transform 0.5s, visibility 0.5s ease-in;
+  -webkit-transition: transform 0.5s, visibility 0.5s ease-in;
+  -moz-transition: transform 0.5s, visibility 0.5s ease-in;
+  -ms-transition: transform 0.5s, visibility 0.5s ease-in;
+  -o-transition: transform 0.5s, visibility 0.5s ease-in;
+}
+
+.classBorder:hover img {
+  transform: scale(1.1);
+}
+
+.classImg {
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+  transition: transform 0.5s, visibility 0.5s ease-in;
+  -webkit-filter: grayscale(100%);
+  -webkit-transition: transform 0.5s, visibility 0.5s ease-in;
+  -moz-transition: transform 0.5s, visibility 0.5s ease-in;
+  -ms-transition: transform 0.5s, visibility 0.5s ease-in;
+  -o-transition: transform 0.5s, visibility 0.5s ease-in;
+}
+
+.classImg:hover {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.class-title:hover {
+  color: #FF0336;
+}
+
+ul svg {
+  fill: #FF0336;
+  width: 25px;
+  margin-right: 15px;
+}

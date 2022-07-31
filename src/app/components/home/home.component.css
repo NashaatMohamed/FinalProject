@@ -1,0 +1,109 @@
+/**start image-header**/
+.image-header{
+  background-image:url('/assets/images/banner-9-1.jpg');
+  background-repeat:no-repeat;
+  background-position: center;
+  height:600px;
+  color:#fff;
+  margin-bottom:80px;
+  font-weight:bold;
+  position:relative;
+
+}
+.image-header .text{
+  position:absolute;
+  top:75%;
+  left:50%;
+  transform:translate(-100%,-100%);
+  -webkit-transform:translate(-100%,-100%);
+  -moz-transform:translate(-100%,-100%);
+  -ms-transform:translate(-100%,-100%);
+  -o-transform:translate(-100%,-100%);
+}
+
+.image-header h2{
+  font-size:50px;
+}
+
+.move2 {
+  animation: bg2 3s infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation: bg2 3s infinite;
+}
+
+@keyframes bg2 {
+  0%   {left:13%; top: 20%;}
+  50%  {left:14%; top: 15%;}
+  100% {left:13%; top: 20%;}
+}
+/*end image-header*/
+.gym-image{
+  background-image:url('https://radiustheme.com/demo/wordpress/themes/gymat/wp-content/uploads/2022/04/shape-17.png');
+}
+
+
+/*start image-fitness*/
+.image-fitness
+{
+  background-image:url('/assets/images/cta-1.jpg');
+  color:#fff;
+  padding:150px 0;
+}
+.image-fitness button,.image-header button{
+  background-color:#ff0336;
+  color:#fff;
+  font-size:15px;
+  padding:10px;
+  border:none;
+  outline:none;
+}
+.move3 {
+  animation: bg3 3s infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation: bg3 3s infinite;
+}
+
+@keyframes bg3 {
+  0%   {left:10%; right: 10%;}
+  50%  {left:30%; right: 60%;}
+  100% {left:10%;right: 90%;}
+}
+
+
+/*end image-fitness*/
+
+
+/*start trainer-section*/
+.trainer-section{
+  padding:100px 0;
+  background-image:url('/assets/images/Group-47-1-1.jpg');
+  color:#fff;
+  position:relative;
+}
+
+.trainer-section .section-one{
+  background: #fff;
+  border: none;
+  border-radius: 200px 100px;
+  overflow:hidden;
+  padding:20px 0 0 0;
+  -webkit-border-radius: 200px 100px;
+  -moz-border-radius: 200px 100px;
+  -ms-border-radius: 200px 100px;
+  -o-border-radius: 200px 100px;
+}
+
+.trainer-section .section-one .text{
+  margin:80px 0 0 80px;
+}
+.trainer-section .section-one .text h4{
+  font-weight:bold;
+  color:#000;
+}
+.trainer-section .section-one .text p{
+  color:#888;
+}
+
+
+
+/*end trainer-section>*/

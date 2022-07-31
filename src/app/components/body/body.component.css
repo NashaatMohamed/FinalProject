@@ -1,0 +1,17 @@
+
+.main-input{
+  background-color:#191919;
+  color:#fff;
+}
+.inputs{
+  height:450px;
+}
+
+.inputs .input input{
+  width:32%;
+}
+.inputs .message{
+  width:100%;
+  height:100px;
+
+}

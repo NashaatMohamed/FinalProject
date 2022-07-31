@@ -1,0 +1,43 @@
+<div class="ourClass mb-5">
+  <img style="background-size: cover; position: relative; width: 100%;" src="assets/images/class-bg.jpg"/>
+  <img style="position:absolute; left:5%; top: 54.5%;" src="assets/images/class-bg1.png" class="move1"/>
+  <img style="position:absolute;left:13%; top: 20%;" src="assets/images/class-bg2.png" class="move2"/>
+  <img style="position:absolute;left:10%; top: 45%;" src="assets/images/class-bg3.svg"/>
+  <h1 style="position:absolute;left:12%; top: 37%; color: white;">Membership</h1>
+  <nav style="position:absolute;left:13%; top: 45%;" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/home">Gymate</a></li>
+      <li class="breadcrumb-item" style="color: #FF0336;">Membership</li>
+    </ol>
+  </nav>
+</div>
+<div class="mt-5 mb-3">
+  <img class="mx-auto d-block" style="fill:#FF0336 !important;" src="assets/images/vectorpaint.svg"/>
+  <h5 style="position: absolute; left: 45%; top: 76.5%; color: white;">PRICING CHART</h5>
+</div>
+<h3 class="text-center mt-4 mb-4">Exclusive Pricing Plan</h3>
+<p class="text-center">Gymat an unknown printer took a galley of type and scrambled<br>make a type specimen book.</p>
+<!-- classes -->
+<div class="container pb-5 pt-5">
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 pb-5">
+    <div class="col" *ngFor="let member of Membership; let i = index">
+      <div class="card classBorder">
+        <img src="assets/images/a2312.jpg" class="card-img-top classImg img-fluid mb-3">
+        <div class="card-body mt-5 text-center">
+          <h4 class="level text-center pe-5 ps-5 pt-3 pb-3" style="top: 37%; left: 25%; position: absolute;">{{member.type}}</h4>
+          <h1 class="card-title"><span style="color: grey; font-size: 20px">$ </span> <span class="fw-bold">{{member.price}} </span> <span style="color: grey; font-size: 20px;">p/m</span></h1>
+          <ul class="text-muted mx-auto" style="list-style-type: none; font-size: 20px;">
+            <li class="pb-2">Free Hand</li>
+            <li class="pb-2">Gym Fitness</li>
+            <li class="pb-2">Weight Loss</li>
+            <li class="pb-2">Personal Trainer</li>
+            <li class="pb-2">Cycling</li>
+          </ul>
+          <a [routerLink]="['/contact',member.id]" style="background-color:#ff0336;border:none;outline:none;color:#fff;padding:10px;margin-top:10px" class="btn btn-primary">Purchase Now
+            <svg style="fill: white; width: 7%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

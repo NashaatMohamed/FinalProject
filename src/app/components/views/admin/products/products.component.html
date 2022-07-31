@@ -1,0 +1,61 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">All students</h6>
+        </div>
+
+        <div class="card-body">
+            <a routerLink="/admin/addstudent" style="float: right;" class="btn btn-primary">Add product</a>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>price</th>
+                            <th>Amount</th>
+                            <th>Details</th>
+                            <th>image</th>
+
+                        </tr>
+                    </thead>
+                    <tbody >
+
+                        <tr *ngFor="let product of products">
+
+                            <td>{{product.name}}</td>
+                            <td>{{product.price}}</td>
+                            <td>{{product.amount}}</td>
+                            <td>{{product.details}}</td>
+                            <!-- <td> <img src="{{product.image}}"></td> -->
+                            <!-- <td>
+                                <button class="btn btn-success" (click)="getdata(item.firstname,item.lastname,item.age,item.phone,item.email,item._id)" data-toggle="modal" data-target="#exampleModal">Update</button>
+                                <button class="btn btn-info" (click)="details(item._id)">Details</button>
+                                <button class="btn btn-danger" (click)="delete(item._id,i)">Delete</button>
+                            </td>-->
+                        </tr>
+                        </tbody>
+                     <!--   <tfoot  >
+                        <tr>
+                          <th>Name</th>
+                          <th>price</th>
+                          <th>Amount</th>
+                          <th>Details</th>
+                           <th>image</th>
+                        </tr>
+                    </tfoot>-->
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- <p>{{products}}</p> -->
+

@@ -1,0 +1,63 @@
+/*start image-header*/
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #FF0336;
+}
+
+.move1 {
+  animation: bg1 5s infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation: bg1 5s infinite;
+}
+
+.move2 {
+  animation: bg2 3s infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation: bg2 3s infinite;
+}
+
+@keyframes bg1 {
+  0%   {left:5%; top: 54.5%;}
+  50%  {left:8%; top: 51.5%;}
+  100% {left:5%; top: 54.5%;}
+}
+
+@keyframes bg2 {
+  0%   {left:13%; top: 20%;}
+  50%  {left:14%; top: 15%;}
+  100% {left:13%; top: 20%;}
+}
+/*end image-header*/
+
+/*start details*/
+.details{
+  margin:100px;
+
+}
+.details .image{
+  background-image:url('/assets/images/shape-121.png');
+  color:#fff;
+  text-align:center;
+  height:600px;
+
+
+
+}
+.details .trainer{
+  width: 250px;
+  height:250px;
+  border:1px solid transparent;
+  border-radius:50% 50%;
+  -webkit-border-radius:50% 50%;
+  -moz-border-radius:50% 50%;
+  -ms-border-radius:50% 50%;
+  -o-border-radius:50% 50%;
+  background-color:#fff;
+  text-align:center;
+}
+
+/*end details*/

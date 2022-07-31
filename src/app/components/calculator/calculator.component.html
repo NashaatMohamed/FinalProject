@@ -1,0 +1,110 @@
+
+
+
+<div class="container d-flex justify-content-md-center">
+
+<div class="bmr-calculator " >
+  <h2>BMR Calculator</h2>
+  <div class="conrlors">
+    <form >
+      <h3>Age</h3>
+      <input type="text" name="age" [(ngModel)]="age" value="20"  >
+      <div class="gender">
+        <h3>gender</h3>
+        <input type="radio" id="male" value="male" name="gender" [(ngModel)]="gender "checked>
+        <label for="male">male</label>
+        <input type="radio" id="female" value="female" name="gender" [(ngModel)]="gender" >
+        <label for="male">female</label>
+      </div>
+
+     <div class="height">
+      <h3>HEIGHT</h3>
+      <input type="text" name="height"  [(ngModel)]="height" value="180">
+      <div class="unit">cm</div>
+    </div>
+
+
+    <div class="weight">
+      <h3>WEIGHT</h3>
+      <input type="text" name="weight"  [(ngModel)]="weight"value="66">
+      <div class="unit">kg</div>
+    </div>
+
+    <button (click)="calculate()">calculate</button>
+
+    </form>
+  </div>
+
+
+
+
+
+  <div class="result-message">
+    <span class="calories ">{{bmr}}</span> calories/day
+  </div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- <script>
+
+function ctrl($scope) {
+  $scope.calculate = function () {
+    if ($scope.gender === "female") {
+      var bmr=   10*$scope.weight + 6.25*$scope.height -5*$scope.age +161 ;
+
+  }else{
+    var bmr= 10*$scope.weight + 6.25*$scope.height -5*$scope.age+5;
+  }
+  }
+  $scope.bmr = Math.floor(bmr);
+  return bmr
+
+}
+
+
+
+</script> -->
+
+
+
+<!-- <script >
+const calories=document.querySelector('.calories');
+const calculatBtn=document.querySelector('.calculat-btn');
+const age=document.querySelector('.#age');
+const height=document.querySelector('#height');
+const weight=document.querySelector('#weight');
+
+
+// BMR =10*weight + 6.25*height -5*age +5
+// BMR =10*weight + 6.25*height -5*age +161
+
+
+const calculateBMR=(weight ,height ,age, gender)=>
+{
+  if(gender=='male'){
+    return 10*weight + 6.25*height -5*age+5;
+  }
+
+  return  10*weight + 6.25*height -5*age +161 ;
+};
+
+calculatBtn=addEventListener("click",()=>{
+ let gendervalue=document.querySelector(" .gender:checked").value;
+
+ let BMR= calculateBMR(weight.value , height.value , age.value , gendervalue);
+
+ calories.innerHtml=BMR
+
+// console.log(BMR)
+});
+
+
+
+
+</script> -->
