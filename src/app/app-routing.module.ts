@@ -24,6 +24,12 @@ import { SingleWorkoutComponent } from './components/single-workout/single-worko
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { WorkoutDetailsComponent } from './components/workout-details/workout-details.component';
 import { ExerciseDetailsComponent } from './components/exercise-details/exercise-details.component';
+import { AddsessionComponent } from './components/views/admin/addsession/addsession.component';
+import { UpdateSessionComponent } from './components/views/admin/update-session/update-session.component';
+import { AddmemberComponent } from './components/views/admin/addmember/addmember.component';
+import { AdminmembershipComponent } from './components/views/admin/adminmembership/adminmembership.component';
+import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
+import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
 
 
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
@@ -41,7 +47,7 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:"classes/next-2-day's-classes",component:Next2DaysClassesComponent,canActivate: [ExpenseGuard],},
   {path:'about',component:AboutComponent},
   {path:'trainers',component:TrainerComponent,canActivate: [ExpenseGuard],},
-  {path:'trainerdetails',component:TrainerDetailComponent,canActivate: [ExpenseGuard],},
+  {path:'trainerdetails/:id',component:TrainerDetailComponent,canActivate: [ExpenseGuard],},
   {path:'shop',component:ShopComponent,canActivate: [ExpenseGuard],},
 
   /*****/
@@ -61,9 +67,13 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'addproduct',loadChildren:()=>import('./components/views/admin/addproduct/addproduct.module').then(m=>m.AddproductModule)},
   {path:'sessions',loadChildren:()=>import('./components/views/admin/sessions/sessions.module').then(m=>m.SessionsModule)},
   {path:'trainers',loadChildren:()=>import('./components/views/admin/trainers/trainers.module').then(m=>m.TrainersModule)},
-  // {path:'calculator',loadChildren:()=>import('./components/calculator/calculator.module').then(m=>m.CalculatorModule)},
-// {path:'login',loadChildren:()=>import('./components/views/admin/adminlogin/adminlogin.module').then(m=>m.AdminloginModule)}
-
+  {path:'addSession',component:AddsessionComponent},
+  {path:'classes/edit/:id',component:UpdateSessionComponent},
+  {path:'addmember',component:AddmemberComponent},
+  {path:'Adminmembership',component:AdminmembershipComponent},
+  {path:'member/edit/:id',component:UpdatemembershipComponent},
+  {path:'addtrainer',component:AddrainerComponent},
+  // {path:'member/edit/:id',component:UpdatemembershipComponent},trainer/edit
 
 ]} ,
 

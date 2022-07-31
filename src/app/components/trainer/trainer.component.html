@@ -20,7 +20,9 @@
   <div class="container">
     <h3 class="text-center mb-5">Meet Our Experienced<br>
       Cool Trainers</h3>
+      
       <div class="d-lg-flex justify-content-evenly" *ngFor="let Trainer of Trainers; let i = index">
+        <a [routerLink]="['/trainerdetails',Trainer.id]">
       <div class=" section-one d-flex "   style="position:relative ;background-color:rgb(245, 238, 238)">
         <div class="text">
           <h4>{{Trainer.name}}</h4>
@@ -33,6 +35,7 @@
         </div>
         <img src="assets/images/team-17.png" >
       </div>
+    </a>
       </div>
   </div>
 
