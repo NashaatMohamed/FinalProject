@@ -1,3 +1,4 @@
+<!--html-->
 <form class="p-4" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
 
     <div class="mb-3">
@@ -37,10 +38,9 @@
 
     <div class="mb-3">
       <label for="image" class="form-label">image</label>
-      <input type="file" formControlName="image"  id="image">
+      <input type="file" formControlName="image"  id="image" >
     </div>
-    <div class="mb-3"> 
+    <div class="mb-3">
         <button type="submit" class="btn btn-primary">Add</button>
     </div>
     </form>
-    

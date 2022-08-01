@@ -15,12 +15,13 @@ export class AddsessionComponent implements OnInit {
     private router:Router,
     private ngZone:NgZone,
     private classCrudServicesService: ClassCrudServicesService
-  ) { 
+  ) {
      this.bookForm = this.formBiulder.group({
        name: [''],
        price: [''],
        Duaration :[''],
-       image:null,
+       image:[''],
+       fileSource: [null],
        discount:[''],
        Day:[''],
        Time:[''],
@@ -34,7 +35,7 @@ export class AddsessionComponent implements OnInit {
   //   });
   // }
 
-  
+
 
   ngOnInit(): void {
   }
@@ -46,7 +47,16 @@ export class AddsessionComponent implements OnInit {
   onSubmit():any{
     // const formData:any = new FormData();
     // formData.append("image",this.bookForm.controls['image'].value);
-    this.classCrudServicesService.addclass(this.bookForm.value)
+    const formData :any= new FormData();
+    formData.append('image', this.bookForm.get('fileSource')?.value);
+    formData.append('price', this.bookForm.get('price')?.value);
+    formData.append('Duaration', this.bookForm.get('Duaration')?.value);
+    formData.append('name', this.bookForm.get('name')?.value);
+    formData.append('Day', this.bookForm.get('Day')?.value);
+    formData.append('Time', this.bookForm.get('Time')?.value);
+    formData.append('description', this.bookForm.get('description')?.value);
+
+    this.classCrudServicesService.addclass(formData)
     .subscribe((res)=>{
       console.log('class added successfully')
       console.log(res);
