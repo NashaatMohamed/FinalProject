@@ -53,14 +53,20 @@
               <li class="nav-item">
                 <a class="nav-link dropdown-item" routerLinkActive="active" *ngIf="!isSignedIn"  routerLink="/register">Register</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link dropdown-item" routerLinkActive="active" routerLink="/profile" *ngIf="isSignedIn">My Acount</a>
+              </li>
+              <li >
+                <a class="btn btn-outline-primary nav-link dropdown-item" (click)="signOut()" *ngIf="isSignedIn">Log out</a>
+              </li>
           </ul>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/profile" *ngIf="isSignedIn">Profile</a>
         </li>
         <li >
           <button class="btn btn-outline-primary" (click)="signOut()" *ngIf="isSignedIn">Log out</button>
-        </li>
+        </li> -->
       </ul>
     </div>
     <div class="nav-right d-xl-flex justify-content-end d-none">

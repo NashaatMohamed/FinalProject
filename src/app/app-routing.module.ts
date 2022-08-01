@@ -24,6 +24,7 @@ import { SingleWorkoutComponent } from './components/single-workout/single-worko
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { WorkoutDetailsComponent } from './components/workout-details/workout-details.component';
 import { ExerciseDetailsComponent } from './components/exercise-details/exercise-details.component';
+import { AdminGuard } from './admin.guard';
 
 
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
@@ -53,7 +54,7 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   /*****/
 
 
-]}, {path:'admin',component:AdminLayoutComponent,children:[
+]}, {path:'admin',component:AdminLayoutComponent,canActivate:[AdminGuard],children:[
   {path:'',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
   {path:'dashboard',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
 
