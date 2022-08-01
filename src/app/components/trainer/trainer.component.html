@@ -20,8 +20,9 @@
   <div class="container">
     <h3 class="text-center mb-5">Meet Our Experienced<br>
       Cool Trainers</h3>
-      <div class="d-lg-flex justify-content-evenly" *ngFor="let Trainer of Trainers; let i = index">
-      <div class=" section-one d-flex "   style="position:relative ;background-color:rgb(245, 238, 238)">
+      <div class="row" >
+      <div class=" col-5 section-one  m-3 " *ngFor="let Trainer of Trainers; let i = index"  style="position:relative ;background-color:rgb(245, 238, 238)">
+        <div class="d-flex">
         <div class="text">
           <h4>{{Trainer.name}}</h4>
           <p>Yoga Trainer</p>
@@ -32,6 +33,7 @@
           <a class="youtube"> <i class="bi bi-dribbble" style="color:#888"></i></a>
         </div>
         <img src="assets/images/team-17.png" >
+      </div>
       </div>
       </div>
   </div>
