@@ -28,7 +28,7 @@ export class BodyComponent implements OnInit {
 
     this.membershipsService.getMemebreship(this.getId).subscribe((data:any[])=>{
       this.getmember = data;
-      console.log(this.getmember['price']);
+      console.log(this.getmember);
     })
 
   }  

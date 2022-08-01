@@ -79,6 +79,7 @@
   background-image:url('/assets/images/Group-47-1-1.jpg');
   color:#fff;
   position:relative;
+  background-repeat:no-repeat;
 }
 
 .trainer-section .section-one{

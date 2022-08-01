@@ -40,6 +40,12 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { WorkoutDetailsComponent } from './components/workout-details/workout-details.component';
 import { ExerciseDetailsComponent } from './components/exercise-details/exercise-details.component';
 import { CommonModule } from '@angular/common';
+import { AddsessionComponent } from './components/views/admin/addsession/addsession.component';
+import { UpdateSessionComponent } from './components/views/admin/update-session/update-session.component';
+import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
+import { AddmemberComponent } from './components/views/admin/addmember/addmember.component';
+import { AdminmembershipComponent } from './components/views/admin/adminmembership/adminmembership.component';
+import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
 
 
 
@@ -73,7 +79,13 @@ import { CommonModule } from '@angular/common';
     WishlistComponent,
     WorkoutDetailsComponent,
     ExerciseDetailsComponent,
-    ClassComponent
+    ClassComponent,
+    AddsessionComponent,
+    UpdateSessionComponent,
+    AddrainerComponent,
+    AddmemberComponent,
+    AdminmembershipComponent,
+    UpdatemembershipComponent
   ],
   imports: [
     AppRoutingModule,
