@@ -20,12 +20,22 @@ export class AddsessionComponent implements OnInit {
        name: [''],
        price: [''],
        Duaration :[''],
-       image:null,
+       image:[''],
+       fileSource: [null],
        discount:[''],
        Day:[''],
        Time:[''],
        description: [''],
      })
+  }
+
+  onFileChange(event:any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.bookForm.patchValue({
+        fileSource: file
+      });
+    }
   }
   // uploadFile(event : Event){
   //   const file = (event.target as HTMLInputElement)?.files?.[0];
@@ -46,7 +56,18 @@ export class AddsessionComponent implements OnInit {
   onSubmit():any{
     // const formData:any = new FormData();
     // formData.append("image",this.bookForm.controls['image'].value);
-    this.classCrudServicesService.addclass(this.bookForm.value)
+
+    const formData :any= new FormData();
+    formData.append('image', this.bookForm.get('fileSource')?.value);
+    formData.append('price', this.bookForm.get('price')?.value);
+    formData.append('Duaration', this.bookForm.get('Duaration')?.value);
+    formData.append('discount', this.bookForm.get('discount')?.value);
+    formData.append('name', this.bookForm.get('name')?.value);
+    formData.append('Day', this.bookForm.get('Day')?.value);
+    formData.append('Time', this.bookForm.get('Time')?.value);
+    formData.append('description', this.bookForm.get('description'));
+
+    this.classCrudServicesService.addclass(formData)
     .subscribe((res)=>{
       console.log('class added successfully')
       console.log(res);

@@ -41,8 +41,8 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   { path: 'login', component: SigninComponent },
   { path: 'register', component: SignupComponent },
   { path: 'profile', component: UserProfileComponent,canActivate: [ExpenseGuard], },
-  {path:'contact/:id',component:BodyComponent},
-  {path:'calculator',component:CalculatorComponent},
+  {path:'contact/:id',component:BodyComponent,canActivate: [ExpenseGuard],},
+  {path:'calculator',component:CalculatorComponent,canActivate: [ExpenseGuard],},
   {path:'classes',component:ClassComponent,canActivate: [ExpenseGuard],},
   {path:"classes/details/:id",component:ClassDetailsComponent,canActivate: [ExpenseGuard],},
   {path:"classes/today's-classes",component:TodayClassesComponent,canActivate: [ExpenseGuard],},
@@ -53,7 +53,7 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'shop',component:ShopComponent,canActivate: [ExpenseGuard],},
 
   /*****/
-  {path:'membership',component:MembershipComponent},
+  {path:'membership',component:MembershipComponent,canActivate: [ExpenseGuard],},
   {path:"single-workout",component:SingleWorkoutComponent},
   {path:"wishlist",component:WishlistComponent},
   {path:"single-workout/workout-details",component:WorkoutDetailsComponent},
