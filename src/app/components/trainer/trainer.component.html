@@ -16,11 +16,9 @@
 <!--end image-header-->
 
 <!--start trainer-section-->
-<div class="trainer-section" style="margin:150px 0">
+<!-- <div class="trainer-section" style="margin:150px 0">
   <div class="container">
-    <h3 class="text-center mb-5">Meet Our Experienced<br>
-      Cool Trainers</h3>
-      
+    <h3 class="text-center mb-5">Meet Our Experienced<br>Cool Trainers</h3>
       <div class="d-lg-flex justify-content-evenly" *ngFor="let Trainer of Trainers; let i = index">
         <a [routerLink]="['/trainerdetails',Trainer.id]">
       <div class=" section-one d-flex "   style="position:relative ;background-color:rgb(245, 238, 238)">
@@ -39,5 +37,34 @@
       </div>
   </div>
 
+</div> -->
+<!--end trainer-section-->
+<!--start trainer-section-->
+<div class="trainer-section" style="margin:150px 0">
+  <div class="container">
+    <h3 class="text-center mb-5">Meet Our Experienced<br>
+      Cool Trainers</h3>
+      <div class="row" >
+      <div class=" col-5 section-one  m-3 " *ngFor="let Trainer of Trainers; let i = index"  style="position:relative ;background-color:rgb(245, 238, 238)">
+        <div class="d-flex">
+              <a [routerLink]="['/trainerdetails',Trainer.id]">
+      <div class=" section-one d-flex "   style="position:relative ;background-color:rgb(245, 238, 238)">
+        <div class="text">
+          <h4>{{Trainer.name}}</h4>
+          <p>Yoga Trainer</p>
+          <p>{{Trainer.decription}}</p>
+          <a class="facebook"><i class="bi bi-facebook me-3" style="color:#888"></i></a>
+          <a class="twitter"><i class="bi bi-twitter" style="color:#888"></i></a>
+          <a class="linkedin"><i class="bi bi-behance mx-3" style="color:#888"></i></a>
+          <a class="youtube"> <i class="bi bi-dribbble" style="color:#888"></i></a>
+        </div>
+        <img src="assets/images/team-17.png" >
+      </div>
+    </a>
+      </div>
+      </div>
+  </div>
+
+</div>
 </div>
 <!--end trainer-section-->
