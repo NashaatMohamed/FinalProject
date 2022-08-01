@@ -30,6 +30,7 @@ import { AddmemberComponent } from './components/views/admin/addmember/addmember
 import { AdminmembershipComponent } from './components/views/admin/adminmembership/adminmembership.component';
 import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
 import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
+import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
 
 
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
@@ -72,6 +73,7 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'addmember',component:AddmemberComponent},
   {path:'Adminmembership',component:AdminmembershipComponent},
   {path:'member/edit/:id',component:UpdatemembershipComponent},
+  {path:'trainer/edit/:id',component:UpdateTrainerComponent},
   {path:'addtrainer',component:AddrainerComponent},
   // {path:'member/edit/:id',component:UpdatemembershipComponent},trainer/edit
 

@@ -1,9 +1,11 @@
 <form class="p-4" [formGroup]="memberForm" (ngSubmit)="onSubmit()">
 
-    <div class="mb-3">
-      <label for="Price" class="form-label">price</label>
-      <input type="text" class="form-control" formControlName="price" id="price" >
-    </div>
+  <div class="mb-3">
+    <label for="Price" class="form-label">name</label>
+    <input type="text" class="form-control" formControlName="name" id="price" >
+  </div>
+
+  
 
     <div class="mb-3">
         <label for="Price" class="form-label">phone</label>
@@ -18,6 +20,11 @@
       <div class="mb-3">
         <label for="Price" class="form-label">decription</label>
         <input type="text" class="form-control" formControlName="decription" id="price" >
+      </div>
+
+      <div class="mb-3">
+        <label for="Price" class="form-label">session_id</label>
+        <input type="text" class="form-control" formControlName="session_id" id="price" >
       </div>
 
     <div class="mb-3">

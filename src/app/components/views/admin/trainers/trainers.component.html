@@ -25,7 +25,6 @@
                  
                     </thead>
                     <tbody>
-  
                         <tr *ngFor="let item of trainers; let i = index">
                           <th scope="row">{{item.id}}</th>
                             <td>{{item.name}}</td>
@@ -33,7 +32,7 @@
                             <td>{{item.gender}}</td>
                             <td>{{item.decription}}</td>
                           <td><button class="btn btn-danger" (click)="delete(item.id,i)">Delete</button></td>
-                          <!-- <td><a class="btn btn-success" [routerLink]="['/admin/trainer/edit',item.id]">Update</a></td> -->
+                          <td><a class="btn btn-success" [routerLink]="['/admin/trainer/edit',item.id]">Update</a></td>
                         </tr>
                     </tbody>
                 </table>
