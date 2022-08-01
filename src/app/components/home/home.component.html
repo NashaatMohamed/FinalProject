@@ -124,32 +124,33 @@
 <!--end force-section-->
 
 <!--start trainer-section-->
-<div class="trainer-section">
+<div class="trainer-section" style="position:relative">
   <img src="assets/images/vector-2-1.pnga" style="position:absolute;top:5%;right:5%" >
   <img src="assets/images/Trainers-1.png" style="position:absolute;left:10%;top:35%" >
   <div class="container">
     <h3 class="text-center mb-5" >Meet Our Experienced<br>
       Cool Trainers</h3>
-      <div class="d-lg-flex justify-content-evenly">
-      <div  class=" section-one d-flex"  *ngFor="let Trainer of Trainers; let i = index" style="position:relative">
-        <div class="text" >
-          <h4 >{{Trainer.name}}</h4>
-          <p>Yoga Trainer</p>
-          <p>{{Trainer.decription}}</p>
-          <a class="facebook"><i class="bi bi-facebook me-3" style="color:#888"></i></a>
-          <a class="twitter"><i class="bi bi-twitter" style="color:#888"></i></a>
-          <a class="linkedin"><i class="bi bi-behance mx-3" style="color:#888"></i></a>
-          <a class="youtube"> <i class="bi bi-dribbble" style="color:#888"></i></a>
+      <div class="row" >
+        <div class=" col-5 section-one  m-3 " *ngFor="let Trainer of Trainers; let i = index"  style="position:relative ;background-color:rgb(245, 238, 238)">
+          <div class="d-flex">
+          <div class="text">
+            <h4>{{Trainer.name}}</h4>
+            <p>Yoga Trainer</p>
+            <p>{{Trainer.decription}}</p>
+            <a class="facebook"><i class="bi bi-facebook me-3" style="color:#888"></i></a>
+            <a class="twitter"><i class="bi bi-twitter" style="color:#888"></i></a>
+            <a class="linkedin"><i class="bi bi-behance mx-3" style="color:#888"></i></a>
+            <a class="youtube"> <i class="bi bi-dribbble" style="color:#888"></i></a>
+          </div>
+          <img src="assets/images/team-17.png" >
         </div>
-        <img src="assets/images/team-17.png">
+        </div>
       </div>
-  </div>
-
 </div>
 <!--end trainer-section-->
 
 <!--start shop-online -->
-<div class="shop-online " style="margin:100px 0">
+<div class="shop-online" style="margin:100px 0;border:1px solid #fff" >
   <div class="container">
     <div class="text-center mb-5">
       <h3 class="fw-bold">Our Online Gym Store </h3>
@@ -157,72 +158,27 @@
         May has survived not onlyive centuries but also the leap electronic.
       </p>
     </div>
-    <div class="row products ">
-      <div class=" col-lg-4 col-md-6">
-        <div style="background-color:rgb(250, 245, 245);text-align:center;width:100%;height:200px">
-          <img  src="assets/images/g_5-150x150.png">
-        </div>
-
-        <h5 style="margin:20px 0">Working Dumble</h5>
-        <h5 style="color:#ff0336">$80.000</h5>
-        <h5>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-        </h5>
-
-        <button style="background-color:#ff0336;border:none;outline:none;color:#fff;padding:10px;margin-top:10px">
-          <i class="bi bi-basket-fill" style="color:#fff"></i>
-          Add To Cart
-        </button>
-
-      </div>
-      <div class="  col-lg-4 col-md-6">
-        <div style="background-color:rgb(250, 245, 245);text-align:center;width:100%;height:200px">
-          <img  src="assets/images/g_6-150x150.png">
-        </div>
-        <h5 style="margin:20px 0">Working Dumble</h5>
-        <h5 style="color:#ff0336">$80.000</h5>
-        <h5 style="color:#fcb302">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-        </h5>
-
-        <button style="background-color:#ff0336;border:none;outline:none;color:#fff;padding:10px;margin-top:10px">
-          <i class="bi bi-basket-fill" style="color:#fff"></i>
-          Add To Cart
-        </button>
-
-      </div>
-      <div class="  col-lg-4 col-md-6">
+    <div class="row products m-5 " >
+      <div class=" col-lg-4 col-md-6 my-5" *ngFor="let prd of   products.data; let i = index">
         <div style="background-color:rgb(250, 245, 245);text-align:center;width:100%;height:200px">
           <img  src="assets/images/g_8-150x150.png">
         </div>
-
-        <h5 style="margin:20px 0">Working Dumble</h5>
-        <h5 style="color:#ff0336">$80.000</h5>
-        <h5>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
+        <h5 style="margin:20px 0 ;color:#000">{{prd.name}}</h5>
+        <h5 style="color:#ff0336">{{prd.price}}</h5>
+        <h5 >
+          <i class="bi bi-star-fill" style="color:#888"></i>
+          <i class="bi bi-star-fill" style="color:#888"></i>
+          <i class="bi bi-star-fill" style="color:#888"></i>
+          <i class="bi bi-star-fill" style="color:#888"></i>
+          <i class="bi bi-star-fill" style="color:#888" ></i>
         </h5>
-
+       
         <button style="background-color:#ff0336;border:none;outline:none;color:#fff;padding:10px;margin-top:10px">
           <i class="bi bi-basket-fill" style="color:#fff"></i>
           Add To Cart
         </button>
-
       </div>
-
     </div>
-
   </div>
 </div>
 
