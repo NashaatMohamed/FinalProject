@@ -28,6 +28,26 @@ export class MembershipsService {
     catchError(this.handleError))
   }
 
+  addmember(data:Memebership): Observable<any>{
+    console.log(data);
+    let API_URL = `${environment.APIBaseURL}/admin/addmembership`;
+    return this.httpClient.post(API_URL,data).pipe(catchError(this.handleError))
+  }
+
+  updatemember(id: any, data: Memebership): Observable<any> {
+    console.log(data);
+    let API_URL = `${environment.APIBaseURL}/admin/newmembership/${id}`;
+    return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
+      .pipe(catchError(this.handleError))
+  }
+    // delete Class
+  deletemember(id: any ): Observable<any> {
+    let API_URL = `${environment.APIBaseURL}/admin/delmembership/${id}`;
+    return this.httpClient.delete(API_URL,  { headers: this.httpHeaders })
+      .pipe(catchError(this.handleError))
+  }
+
+
   handleError(error:HttpErrorResponse){
     let errorMessage = '';
     if(error.error instanceof ErrorEvent){

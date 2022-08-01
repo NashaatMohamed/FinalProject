@@ -1,0 +1,20 @@
+<form class="p-4" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+
+    <div class="mb-3">
+        <label for="Price" class="form-label">type</label>
+        <input type="text" class="form-control" formControlName="type" id="type" >
+      </div>
+
+    <div class="mb-3">
+      <label for="Price" class="form-label">price</label>
+      <input type="text" class="form-control" formControlName="price" id="price" >
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">image</label>
+      <input type="file" formControlName="image"  id="image">
+    </div>
+    <div class="mb-3"> 
+        <button type="submit" class="btn btn-primary">update</button>
+    </div>
+    </form>
