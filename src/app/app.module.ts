@@ -46,6 +46,10 @@ import { AddrainerComponent } from './components/views/admin/addrainer/addrainer
 import { AddmemberComponent } from './components/views/admin/addmember/addmember.component';
 import { AdminmembershipComponent } from './components/views/admin/adminmembership/adminmembership.component';
 import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
+import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
+import { SearchComponent } from './components/search/search.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 
 
 
@@ -85,7 +89,11 @@ import { UpdatemembershipComponent } from './components/views/admin/updatemember
     AddrainerComponent,
     AddmemberComponent,
     AdminmembershipComponent,
-    UpdatemembershipComponent
+    UpdatemembershipComponent,
+    UpdateTrainerComponent,
+    SearchComponent,
+    FavoriteComponent,
+    ShoppingcartComponent
   ],
   imports: [
     AppRoutingModule,

@@ -22,7 +22,7 @@ export class CrudTrainerService {
   // getTrainer
 
   gettrainer(id: any): Observable<any> {
-    let API_URL = `${environment.APIBaseURL}/auth/trainer/${id}`;
+    let API_URL = `${environment.APIBaseURL}/trainer/${id}`;
   return this.httpClient.get(API_URL, { headers: this.httpHeaders})
   .pipe(map((res:any)=>{
     return res || {}
@@ -38,6 +38,7 @@ export class CrudTrainerService {
   }
       // update class
   updatetrainer(id: any, data: Trainer): Observable<any> {
+    console.log(data);
     let API_URL = `${environment.APIBaseURL}/admin/trainer/${id}`;
     return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
       .pipe(catchError(this.handleError))

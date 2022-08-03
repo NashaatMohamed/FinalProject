@@ -24,12 +24,16 @@ import { SingleWorkoutComponent } from './components/single-workout/single-worko
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { WorkoutDetailsComponent } from './components/workout-details/workout-details.component';
 import { ExerciseDetailsComponent } from './components/exercise-details/exercise-details.component';
+import { AdminGuard } from './admin.guard';
 import { AddsessionComponent } from './components/views/admin/addsession/addsession.component';
 import { UpdateSessionComponent } from './components/views/admin/update-session/update-session.component';
 import { AddmemberComponent } from './components/views/admin/addmember/addmember.component';
 import { AdminmembershipComponent } from './components/views/admin/adminmembership/adminmembership.component';
 import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
 import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
+import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 
 
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
@@ -39,8 +43,8 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   { path: 'login', component: SigninComponent },
   { path: 'register', component: SignupComponent },
   { path: 'profile', component: UserProfileComponent,canActivate: [ExpenseGuard], },
-  {path:'contact/:id',component:BodyComponent},
-  {path:'calculator',component:CalculatorComponent},
+  {path:'contact/:id',component:BodyComponent,canActivate: [ExpenseGuard],},
+  {path:'calculator',component:CalculatorComponent,canActivate: [ExpenseGuard],},
   {path:'classes',component:ClassComponent,canActivate: [ExpenseGuard],},
   {path:"classes/details/:id",component:ClassDetailsComponent,canActivate: [ExpenseGuard],},
   {path:"classes/today's-classes",component:TodayClassesComponent,canActivate: [ExpenseGuard],},
@@ -51,15 +55,19 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'shop',component:ShopComponent,canActivate: [ExpenseGuard],},
 
   /*****/
-  {path:'membership',component:MembershipComponent},
+  {path:'membership',component:MembershipComponent,canActivate: [ExpenseGuard],},
   {path:"single-workout",component:SingleWorkoutComponent},
   {path:"wishlist",component:WishlistComponent},
   {path:"single-workout/workout-details",component:WorkoutDetailsComponent},
   {path:"single-workout/workout-details/exercise-details",component:ExerciseDetailsComponent},
   /*****/
 
+  {path:"favorite",component:FavoriteComponent},
+  {path:"shoppingcart",component:ShoppingcartComponent},
 
-]}, {path:'admin',component:AdminLayoutComponent,children:[
+
+
+]}, {path:'admin',component:AdminLayoutComponent,canActivate:[AdminGuard],children:[
   {path:'',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
   {path:'dashboard',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
 
@@ -72,6 +80,7 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'addmember',component:AddmemberComponent},
   {path:'Adminmembership',component:AdminmembershipComponent},
   {path:'member/edit/:id',component:UpdatemembershipComponent},
+  {path:'trainer/edit/:id',component:UpdateTrainerComponent},
   {path:'addtrainer',component:AddrainerComponent},
   // {path:'member/edit/:id',component:UpdatemembershipComponent},trainer/edit
 
