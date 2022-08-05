@@ -80,13 +80,13 @@ export class ClassCrudServicesService {
       // update class
   updateclass(id: any, data: Classes): Observable<any> {
     console.log(data);
-    let API_URL = `${environment.APIBaseURL}/admin/newClass/${id}`;
+    let API_URL = `${environment.APIBaseURL}/newClass/${id}`;
     return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
       .pipe(catchError(this.handleError))
   }
     // delete Class
   deleteclass(id: any ): Observable<any> {
-    let API_URL = `${environment.APIBaseURL}/admin/delClass/${id}`;
+    let API_URL = `${environment.APIBaseURL}/delClass/${id}`;
     return this.httpClient.delete(API_URL,  { headers: this.httpHeaders })
       .pipe(catchError(this.handleError))
   }

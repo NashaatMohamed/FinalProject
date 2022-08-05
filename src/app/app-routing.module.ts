@@ -33,6 +33,9 @@ import { UpdatemembershipComponent } from './components/views/admin/updatemember
 import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
 import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
 import { AllmymemberComponent } from './components/views/admin/allmymember/allmymember.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
+
 
 
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
@@ -62,6 +65,10 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:"single-workout/workout-details/exercise-details",component:ExerciseDetailsComponent},
   
   /*****/
+
+  {path:"favorite",component:FavoriteComponent},
+  {path:"shoppingcart",component:ShoppingcartComponent},
+
 
 
 ]}, {path:'admin',component:AdminLayoutComponent,children:[

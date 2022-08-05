@@ -18,4 +18,10 @@ export class TrainerComponent implements OnInit {
     });
   }
 
+  searchText:string='';
+
+  onsearchTextEntered(searchValue: string){
+    this.searchText = searchValue;
+  }
+
 }

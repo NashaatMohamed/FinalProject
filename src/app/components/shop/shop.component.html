@@ -1,7 +1,7 @@
 <!--start shop-online -->
 <div class="shop-online " style="margin:100px 0">
   <div class="container">
-
+    <app-search (searchTextChanged)="onsearchTextEntered($event)"></app-search>
     <div class="mb-3">
       <select id="disabledSelect" class="form-select" >
         <option>select all result</option>
@@ -11,6 +11,7 @@
     </div>
     <div class="row products m-5 " >
       <div class=" col-lg-4 col-md-6 my-5" *ngFor="let prd of   products.data; let i = index">
+      <div *ngIf="searchText === '' || prd.name.toLowerCase().includes(searchText)|| prd.name.toUpperCase().includes(searchText)">
         <div style="background-color:rgb(250, 245, 245);text-align:center;width:100%;height:200px">
           <img  src="assets/images/g_8-150x150.png">
         </div>
@@ -24,12 +25,15 @@
           <i class="bi bi-star-fill"></i>
           <i class="bi bi-star-fill"></i>
         </h5>
-
-        <button style="background-color:#ff0336;border:none;outline:none;color:#fff;padding:10px;margin-top:10px">
+        <div class="d-flex justify-content-between">
+        <button  (click)="addcart(prd)" style="background-color:#ff0336;border:none;outline:none;color:#fff;padding:10px;margin-top:10px">
           <i class="bi bi-basket-fill" style="color:#fff"></i>
           Add To Cart
         </button>
+        <button (click)="add(prd)" style="border:none;outline:none;background-color:#fff;"><span class="heart-sec" style="font-size:30px;color:#ff0336"><i class="bi bi-heart-fill" ></i></span></button>
+      </div>
 
+      </div>
       </div>
 
 

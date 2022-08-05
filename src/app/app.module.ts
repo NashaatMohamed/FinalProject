@@ -48,6 +48,10 @@ import { AdminmembershipComponent } from './components/views/admin/adminmembersh
 import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
 import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
 import { AllmymemberComponent } from './components/views/admin/allmymember/allmymember.component';
+import { SearchComponent } from './components/search/search.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
+
 
 
 
@@ -89,7 +93,11 @@ import { AllmymemberComponent } from './components/views/admin/allmymember/allmy
     AdminmembershipComponent,
     UpdatemembershipComponent,
     UpdateTrainerComponent,
-    AllmymemberComponent
+    AllmymemberComponent,
+    SearchComponent,
+    FavoriteComponent,
+    ShoppingcartComponent,
+    UpdateTrainerComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -100,7 +108,7 @@ import { AllmymemberComponent } from './components/views/admin/allmymember/allmy
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
 
 
   ],
