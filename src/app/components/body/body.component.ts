@@ -13,9 +13,9 @@ export class BodyComponent implements OnInit {
   getmember:any;
   myname:any;
 
-  
 
-  constructor(private membershipsService:MembershipsService,private router: Router,private activateRout: ActivatedRoute) { 
+
+  constructor(private membershipsService:MembershipsService,private router: Router,private activateRout: ActivatedRoute) {
 
     // this.getId = this.activateRout.snapshot.paramMap.get('id');
     // this.membershipsService.getMemebreship(this.getId).subscribe(res=>{
@@ -31,7 +31,7 @@ export class BodyComponent implements OnInit {
       console.log(this.getmember['price']);
     })
 
-  }  
+  }
 
   ngOnInit(): void {
 
@@ -52,10 +52,10 @@ export class BodyComponent implements OnInit {
     paymentHandler.open({
       name: this.myname,
       description: 'ادفع يلا',
-      amount: amount 
+      amount: amount
     });
   }
-  
+
   invokeStripe() {
     if(!window.document.getElementById('stripe-script')) {
       const script = window.document.createElement("script");

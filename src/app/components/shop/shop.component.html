@@ -3,14 +3,15 @@
   <div class="container">
 
     <div class="mb-3">
-      <select id="disabledSelect" class="form-select" >
-        <option>select all result</option>
-        <option>weight</option>
-        <option>length</option>
+      <select id="disabledSelect" class="form-select" (change)="fiterCategory($event)" >
+        <option [value]=0 selected>select all result</option>
+        <option *ngFor="let item of categories" [value]="item.id">{{item.name}}</option>
       </select>
+
+
     </div>
     <div class="row products m-5 ">
-      <div class=" col-lg-4 col-md-6">
+      <!-- <div class=" col-lg-4 col-md-6">
         <div style="background-color:rgb(250, 245, 245);text-align:center;width:100%;height:200px">
           <img  src="assets/images/g_5-150x150.png">
         </div>
@@ -50,14 +51,14 @@
           Add To Cart
         </button>
 
-      </div>
-      <div class="  col-lg-4 col-md-6">
+      </div> -->
+      <div class="  col-lg-4 col-md-6" *ngFor="let item of products">
         <div style="background-color:rgb(250, 245, 245);text-align:center;width:100%;height:200px">
-          <img  src="assets/images/g_8-150x150.png">
+          <img  src="{{imagepath}}{{item.image}}" style="width:100%">
         </div>
 
-        <h5 style="margin:20px 0">Working Dumble</h5>
-        <h5 style="color:#ff0336">$80.000</h5>
+        <h5 style="margin:20px 0">{{item.name}}</h5>
+        <h5 style="color:#ff0336">{{item.price}}</h5>
         <h5>
           <i class="bi bi-star-fill"></i>
           <i class="bi bi-star-fill"></i>

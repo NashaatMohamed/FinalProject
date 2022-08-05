@@ -40,6 +40,15 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { WorkoutDetailsComponent } from './components/workout-details/workout-details.component';
 import { ExerciseDetailsComponent } from './components/exercise-details/exercise-details.component';
 import { CommonModule } from '@angular/common';
+import { FoodColoriesComponent } from './components/food-colories/food-colories.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { SingleWorkoutCategoryComponent } from './components/views/admin/single-workout-category/single-workout-category.component';
+import { AddSigleWorkoutCategoryComponent } from './components/views/admin/add-sigle-workout-category/add-sigle-workout-category.component';
+import { ExerciesComponent } from './components/views/admin/exercies/exercies.component';
+import { AddExerciesComponent } from './components/views/admin/add-exercies/add-exercies.component';
+import { FoodsComponent } from './components/views/admin/foods/foods.component';
+import { AddFoodComponent } from './components/views/admin/add-food/add-food.component';
+import { EditFoodComponent } from './components/views/admin/edit-food/edit-food.component';
 
 
 
@@ -57,9 +66,8 @@ import { CommonModule } from '@angular/common';
     AboutComponent,
     SigninComponent,
     SignupComponent,
-   
+
     UserProfileComponent,
-   
     AdminloginComponent,
     TrainerComponent,
     TopComponent,
@@ -73,7 +81,15 @@ import { CommonModule } from '@angular/common';
     WishlistComponent,
     WorkoutDetailsComponent,
     ExerciseDetailsComponent,
-    ClassComponent
+    ClassComponent,
+    FoodColoriesComponent,
+    SingleWorkoutCategoryComponent,
+    AddSigleWorkoutCategoryComponent,
+    ExerciesComponent,
+    AddExerciesComponent,
+    FoodsComponent,
+    AddFoodComponent,
+    EditFoodComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -84,7 +100,8 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    NgxPaginationModule
 
 
   ],
@@ -93,19 +110,19 @@ import { CommonModule } from '@angular/common';
       provide: HTTP_INTERCEPTORS,
       useClass: AdminInterceptor,
       multi: true,
-    
-  
-  
+
+
+
     },
     {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true,
-  
+
 
 
   }],
- 
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

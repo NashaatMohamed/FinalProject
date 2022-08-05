@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AddproductRoutingModule } from './addproduct-routing.module';
 import { AddproductComponent } from './addproduct.component';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     CommonModule,
     AddproductRoutingModule,
-    HttpClientModule
+    HttpClientModule,ReactiveFormsModule
 
 
   ]
