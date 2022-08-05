@@ -17,6 +17,7 @@ export class SigninComponent implements OnInit {
     public fb: FormBuilder,
     public authService: AuthService,
     private token: TokenService,
+    private userid: TokenService,
     private authState: AuthStateService
   ) {
     this.loginForm = this.fb.group({
@@ -50,7 +51,13 @@ export class SigninComponent implements OnInit {
   // Handle response
   responseHandler(data:any) {
 
-
+ this.userid.useridleData(data.user.id);
+    console.log(data.user.id);
     this.token.handleData(data.user.access_token);
+  }
+  userideHandler(data:any) {
+
+
+   
   }
 }

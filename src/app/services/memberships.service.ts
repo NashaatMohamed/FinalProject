@@ -16,11 +16,11 @@ export class MembershipsService {
 
   // get all Memebreship
   getMemebreships():Observable<Memebership[]>{
-    return this.httpClient.get<Memebership[]>(`${environment.APIBaseURL}/auth/allmembership`);
+    return this.httpClient.get<Memebership[]>(`${environment.APIBaseURL}/allmembership`);
   }
     // get Memebreship by ID
   getMemebreship(id: any): Observable<any> {
-    let API_URL = `${environment.APIBaseURL}/auth/yourmembership/${id}`;
+    let API_URL = `${environment.APIBaseURL}/yourmembership/${id}`;
   return this.httpClient.get(API_URL, { headers: this.httpHeaders})
   .pipe(map((res:any)=>{
     return res || {}

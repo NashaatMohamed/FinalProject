@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http'
 })
 export class ProductService {
 
-  Rest_Api:string="http://localhost:8000/api/products";
+  Rest_Api:string="http://localhost:8000/api/auth/products";
   httpHeader=new HttpHeaders().set('content-type','application/json');
   // public set value(v : string) {
 

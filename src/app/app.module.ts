@@ -47,6 +47,7 @@ import { AddmemberComponent } from './components/views/admin/addmember/addmember
 import { AdminmembershipComponent } from './components/views/admin/adminmembership/adminmembership.component';
 import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
 import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 
 
@@ -60,7 +61,7 @@ import { UpdateTrainerComponent } from './components/views/admin/update-trainer/
     HomeComponent,
     NotFoundComponent,
     CalculatorComponent,
-
+   
     AboutComponent,
     SigninComponent,
     SignupComponent,
@@ -87,7 +88,8 @@ import { UpdateTrainerComponent } from './components/views/admin/update-trainer/
     AddmemberComponent,
     AdminmembershipComponent,
     UpdatemembershipComponent,
-    UpdateTrainerComponent
+    UpdateTrainerComponent,
+    CommentComponent
   ],
   imports: [
     AppRoutingModule,
