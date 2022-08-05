@@ -16,7 +16,7 @@ export class CrudTrainerService {
 
    // get all trainers
    getTrainers():Observable<Trainer[]>{
-    return this.httpClient.get<Trainer[]>(`${environment.APIBaseURL}/trainers`);
+    return this.httpClient.get<Trainer[]>(`${environment.APIBaseURL}/auth/trainers`);
   }
 
   // getTrainer

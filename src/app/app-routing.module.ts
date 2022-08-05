@@ -36,6 +36,7 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 
 
+
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:"",redirectTo:'home',pathMatch:'full'},//Default Path
   {path:'home',component:HomeComponent},

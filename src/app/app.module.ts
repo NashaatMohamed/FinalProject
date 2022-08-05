@@ -53,6 +53,7 @@ import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.co
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,6 +95,7 @@ import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.co
     SearchComponent,
     FavoriteComponent,
     ShoppingcartComponent
+    UpdateTrainerComponent
   ],
   imports: [
     AppRoutingModule,

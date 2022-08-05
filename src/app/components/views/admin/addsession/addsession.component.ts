@@ -70,6 +70,12 @@ export class AddsessionComponent implements OnInit {
     formData.append('discount', this.bookForm.get('discount')?.value);
     formData.append('Time', this.bookForm.get('Time')?.value);
 
+    formData.append('discount', this.bookForm.get('discount')?.value);
+    formData.append('name', this.bookForm.get('name')?.value);
+    formData.append('Day', this.bookForm.get('Day')?.value);
+    formData.append('Time', this.bookForm.get('Time')?.value);
+    formData.append('description', this.bookForm.get('description'));
+
     this.classCrudServicesService.addclass(formData)
     .subscribe((res)=>{
       console.log('class added successfully')
