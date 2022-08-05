@@ -1,0 +1,53 @@
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+      <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">All singleWorkouts</h6>
+      </div>
+
+      <div class="card-body">
+          <a routerLink="/admin/addproduct"style="float: right;" class="btn btn-primary">Add Singleworkout</a>
+          <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>price</th>
+                          <th>Amount</th>
+                          <th>image</th>
+
+                      </tr>
+                  </thead>
+                  <tbody >
+
+                      <tr *ngFor="let item of Singleworkout">
+
+                          <td>{{item.name}}</td>
+                          <td>{{item.level}}</td>
+                          <td>{{item.body_place}}</td>
+                          <td> <img src="{{imagepath}}{{item.image}}" style="width:100px"></td>
+
+                          <td class=" ">
+                            <button type="button" class="btn btn-danger me-3"(click)="delete(item.id,1)">delete</button>
+                            <button type="button" class="btn btn-success">update</button>
+
+                          </td>
+
+                       
+                      </tr>
+                      </tbody>
+
+
+              </table>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+
+<!-- <p>{{products}}</p> -->
