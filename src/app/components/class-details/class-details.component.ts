@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Member } from 'src/app/Models/member';
 import { ClassCrudServicesService } from 'src/app/services/class-crud-services.service';
 
 @Component({
@@ -12,10 +14,17 @@ export class ClassDetailsComponent implements OnInit {
   getId:any;
   getClass:any;
   myname:any;
+  memberForm: FormGroup;
+  classs:Member[] = [];
 
-  
 
-  constructor(private classCrudServicesService:ClassCrudServicesService,private router: Router,private activateRout: ActivatedRoute) { 
+  constructor(private classCrudServicesService:ClassCrudServicesService,
+    private router: Router,
+    private activateRout: ActivatedRoute,
+    public formBiulder:FormBuilder,
+    private ngZone:NgZone,
+
+    ) { 
 
     // this.getId = this.activateRout.snapshot.paramMap.get('id');
     // this.membershipsService.getMemebreship(this.getId).subscribe(res=>{
@@ -31,9 +40,31 @@ export class ClassDetailsComponent implements OnInit {
       console.log(this.getClass);
     })
 
-  }  
+    this.memberForm = this.formBiulder.group({
+      name:[''],
+      email: [''],
+      session_id:this.getId
+     })
 
+
+  }  
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
+  onSubmit():any{
+    this.classCrudServicesService.addmember(this.memberForm.value)
+    .subscribe((res)=>{
+      console.log('member added successfully')
+      console.log(res.id);
+      this.ngZone.run(()=> this.router.navigateByUrl('membership'))
+    },(err)=>{
+      console.log(err)
+    })
+  }
+ 
 }
+
+
+
+

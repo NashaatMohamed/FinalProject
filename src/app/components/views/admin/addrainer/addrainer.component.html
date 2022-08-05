@@ -1,4 +1,4 @@
-<form class="p-4" [formGroup]="memberForm" (ngSubmit)="onSubmit()">
+<form class="p-4"  [formGroup]="trainerSession" (ngSubmit)="onSubmit()">
 
   <div class="mb-3">
     <label for="Price" class="form-label">name</label>
@@ -18,7 +18,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="Price" class="form-label">decription</label>
+        <label for="Price" class="form-label">description</label>
         <input type="text" class="form-control" formControlName="decription" id="price" >
       </div>
 
@@ -27,9 +27,15 @@
         <input type="text" class="form-control" formControlName="session_id" id="price" >
       </div>
 
+      <!-- <div class="mb-3">
+      <select type="text"  [formControl]="control1" > 
+        <option formControlName="session_id" *ngFor ="let class of classs" [value]="class.id">{{class.name}}</option>
+      </select>
+      </div> -->
+
     <div class="mb-3">
       <label for="image" class="form-label">image</label>
-      <input type="file" formControlName="image"  id="image">
+      <input type="file" formControlName="image"  (change)="onFileChange($event)" id="image">
     </div>
     <div class="mb-3"> 
         <button type="submit" class="btn btn-primary">AddTrainer</button>

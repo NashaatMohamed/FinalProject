@@ -10,6 +10,7 @@ import { ClassCrudServicesService } from 'src/app/services/class-crud-services.s
   styleUrls: ['./class.component.css']
 })
 export class ClassComponent implements OnInit {
+  imagepath:any = "http://127.0.0.1:8000/assets/"
   classs:Classes[] = [];
   constructor(private classCrudServicesService:ClassCrudServicesService,private router: Router) { }
 

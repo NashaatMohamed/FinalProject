@@ -19,17 +19,18 @@ export class AddmemberComponent implements OnInit {
      this.memberForm = this.formBiulder.group({
       type: [''],
       price: [''],
+      image:[''],
+      fileSource: [null],
      })
   }
-  // uploadFile(event : Event){
-  //   const file = (event.target as HTMLInputElement)?.files?.[0];
-  //   this.bookForm.patchValue({
-  //     image : file
-  //   });
-  // }
-
-  
-
+  onFileChange(event:any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.memberForm.patchValue({
+        fileSource: file
+      });
+    }
+  }
   ngOnInit(): void {
   }
   // submitForm(){
@@ -38,9 +39,11 @@ export class AddmemberComponent implements OnInit {
   // }
 
   onSubmit():any{
-    // const formData:any = new FormData();
-    // formData.append("image",this.bookForm.controls['im/age'].value);
-    this.membershipsService.addmember(this.memberForm.value)
+    const formData :any= new FormData();
+    formData.append('image', this.memberForm.get('fileSource')?.value);
+    formData.append('price', this.memberForm.get('price')?.value);
+    formData.append('type', this.memberForm.get('type')?.value);
+    this.membershipsService.addmember(formData)
     .subscribe((res)=>{
       console.log('member added successfully')
       console.log(res);

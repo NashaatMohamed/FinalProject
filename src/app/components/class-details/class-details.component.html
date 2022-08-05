@@ -127,6 +127,30 @@
           </div>
         </div>
       </div>
+      <div>
+        to book this Class :
+        <form [formGroup]="memberForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="Price" class="form-label">Name</label>
+            <input type="text"  formControlName="name" id="name" >
+          </div>
+
+          <div>
+            <!-- <label for="Price" class="form-label">user_id</label> -->
+            <input  type="hidden" formControlName="session_id" id="session_id" [value]="getClass.id">
+          </div>
+        
+        <div class="mb-3">
+          <label for="Price" class="form-label">email</label>
+          <input type="text"  formControlName="email" id="email" >
+        </div>
+
+        <div class="mb-3"> 
+          <button type="submit"  class="btn btn-primary">Book</button>
+      </div>
+
+        </form>
+      </div>
     </div>
   </div>
 </div>

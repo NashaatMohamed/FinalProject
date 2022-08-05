@@ -1,0 +1,44 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+  
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">All Classes</h6>
+        </div>
+  
+        <div class="card-body">
+            <!-- <a routerLink="/admin/addSession" class="btn btn-primary mb-2">Add session</a> -->
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                          <tr>
+                              <th scope="col">#</th>
+                              <th>NameOFmember</th>
+                              <th>OwnClass</th> 
+                          </tr>
+  
+                 
+                    </thead>
+                    <tbody>
+  
+                        <tr *ngFor="let member of MemberClass; let i = index">
+                          <th scope="row">{{member.id}}</th>
+                            <td>{{member.name}}</td>
+                            <td>{{member['session'].name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  
+  </div>
+  
+<!-- <div *ngFor="let member of MemberClass">
+    <div>{{member.name}}</div>
+    <div>{{member['session'].name}}</div>
+
+</div> -->

@@ -32,6 +32,7 @@ import { AdminmembershipComponent } from './components/views/admin/adminmembersh
 import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
 import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
 import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
+import { AllmymemberComponent } from './components/views/admin/allmymember/allmymember.component';
 
 
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
@@ -53,15 +54,17 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'shop',component:ShopComponent,canActivate: [ExpenseGuard],},
 
   /*****/
-  {path:'membership',component:MembershipComponent,canActivate: [ExpenseGuard],},
+  {path:'membership/:id',component:MembershipComponent,canActivate: [ExpenseGuard],},
+  {path:'membership', redirectTo: '/classes', pathMatch: 'full'},
   {path:"single-workout",component:SingleWorkoutComponent},
   {path:"wishlist",component:WishlistComponent},
   {path:"single-workout/workout-details",component:WorkoutDetailsComponent},
   {path:"single-workout/workout-details/exercise-details",component:ExerciseDetailsComponent},
+  
   /*****/
 
 
-]}, {path:'admin',component:AdminLayoutComponent,canActivate:[AdminGuard],children:[
+]}, {path:'admin',component:AdminLayoutComponent,children:[
   {path:'',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
   {path:'dashboard',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
 
@@ -72,6 +75,7 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'addSession',component:AddsessionComponent},
   {path:'classes/edit/:id',component:UpdateSessionComponent},
   {path:'addmember',component:AddmemberComponent},
+  {path:'allmember',component:AllmymemberComponent},
   {path:'Adminmembership',component:AdminmembershipComponent},
   {path:'member/edit/:id',component:UpdatemembershipComponent},
   {path:'trainer/edit/:id',component:UpdateTrainerComponent},

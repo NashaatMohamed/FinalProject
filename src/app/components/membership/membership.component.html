@@ -22,7 +22,7 @@
   <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 pb-5">
     <div class="col" *ngFor="let member of Membership; let i = index">
       <div class="card classBorder">
-        <img src="assets/images/a2312.jpg" class="card-img-top classImg img-fluid mb-3">
+        <img src={{imagepath}}{{member.image}} class="card-img-top classImg img-fluid mb-3">
         <div class="card-body mt-5 text-center">
           <h4 class="level text-center pe-5 ps-5 pt-3 pb-3" style="top: 37%; left: 25%; position: absolute;">{{member.type}}</h4>
           <h1 class="card-title"><span style="color: grey; font-size: 20px">$ </span> <span class="fw-bold">{{member.price}} </span> <span style="color: grey; font-size: 20px;">p/m</span></h1>
