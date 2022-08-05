@@ -1,0 +1,41 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+  
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">All Membership</h6>
+        </div>
+  
+        <div class="card-body">
+            <a routerLink="/admin/addmember" class="btn btn-primary mb-2">Add Membership</a>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                          <tr>
+                              <th scope="col">#</th>
+                              <th>type</th>
+                              <th>price</th> 
+                          </tr>
+  
+                 
+                    </thead>
+                    <tbody>
+  
+                        <tr *ngFor="let item of member; let i = index">
+                          <th scope="row">{{item.id}}</th>
+                            <td>{{item.type}}</td>
+                            <td>{{item.price}}</td>
+                          <td><button class="btn btn-danger" (click)="delete(item.id,i)">Delete</button></td>
+                          <td><a class="btn btn-success" [routerLink]="['/admin/member/edit',item.id]">Update</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  
+  </div>
+  

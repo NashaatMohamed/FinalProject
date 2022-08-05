@@ -27,7 +27,7 @@ export class ClassCrudServicesService {
   }
 
   getclass(id: any): Observable<any> {
-    let API_URL = `${environment.APIBaseURL}/yourClass/user/${id}`;
+    let API_URL = `${environment.APIBaseURL}/auth/yourClass/${id}`;
   return this.httpClient.get(API_URL, { headers: this.httpHeaders})
   .pipe(map((res:any)=>{
     return res || {}
@@ -35,13 +35,15 @@ export class ClassCrudServicesService {
     catchError(this.handleError))
   }
 
-  // post book
+  // post class
   addclass(data:Classes): Observable<any>{
+    console.log(data);
     let API_URL =  `${environment.APIBaseURL}/addclass`;
     return this.httpClient.post(API_URL,data).pipe(catchError(this.handleError))
   }
       // update class
   updateclass(id: any, data: Classes): Observable<any> {
+    console.log(data);
     let API_URL = `${environment.APIBaseURL}/newClass/${id}`;
     return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
       .pipe(catchError(this.handleError))

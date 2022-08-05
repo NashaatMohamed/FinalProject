@@ -16,6 +16,7 @@ a:hover {
 .move2 {
   animation: bg2 3s infinite;
   animation-timing-function: ease-in-out;
+  -webkit-animation: bg2 3s infinite;
 }
 
 @keyframes bg1 {

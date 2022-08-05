@@ -49,6 +49,17 @@ import { AddExerciesComponent } from './components/views/admin/add-exercies/add-
 import { FoodsComponent } from './components/views/admin/foods/foods.component';
 import { AddFoodComponent } from './components/views/admin/add-food/add-food.component';
 import { EditFoodComponent } from './components/views/admin/edit-food/edit-food.component';
+import { AddsessionComponent } from './components/views/admin/addsession/addsession.component';
+import { UpdateSessionComponent } from './components/views/admin/update-session/update-session.component';
+import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
+import { AddmemberComponent } from './components/views/admin/addmember/addmember.component';
+import { AdminmembershipComponent } from './components/views/admin/adminmembership/adminmembership.component';
+import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
+import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
+import { SearchComponent } from './components/search/search.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
+
 
 
 
@@ -90,6 +101,18 @@ import { EditFoodComponent } from './components/views/admin/edit-food/edit-food.
     FoodsComponent,
     AddFoodComponent,
     EditFoodComponent,
+
+    AddsessionComponent,
+    UpdateSessionComponent,
+    AddrainerComponent,
+    AddmemberComponent,
+    AdminmembershipComponent,
+    UpdatemembershipComponent,
+    UpdateTrainerComponent,
+    SearchComponent,
+    FavoriteComponent,
+    ShoppingcartComponent
+    UpdateTrainerComponent
   ],
   imports: [
     AppRoutingModule,
