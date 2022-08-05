@@ -47,6 +47,10 @@ import { AddmemberComponent } from './components/views/admin/addmember/addmember
 import { AdminmembershipComponent } from './components/views/admin/adminmembership/adminmembership.component';
 import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
 import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
+import { SearchComponent } from './components/search/search.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
+
 
 
 
@@ -87,6 +91,10 @@ import { UpdateTrainerComponent } from './components/views/admin/update-trainer/
     AddmemberComponent,
     AdminmembershipComponent,
     UpdatemembershipComponent,
+    UpdateTrainerComponent,
+    SearchComponent,
+    FavoriteComponent,
+    ShoppingcartComponent
     UpdateTrainerComponent
   ],
   imports: [

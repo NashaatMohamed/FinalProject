@@ -32,6 +32,9 @@ import { AdminmembershipComponent } from './components/views/admin/adminmembersh
 import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
 import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
 import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
+
 
 
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
@@ -59,6 +62,10 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:"single-workout/workout-details",component:WorkoutDetailsComponent},
   {path:"single-workout/workout-details/exercise-details",component:ExerciseDetailsComponent},
   /*****/
+
+  {path:"favorite",component:FavoriteComponent},
+  {path:"shoppingcart",component:ShoppingcartComponent},
+
 
 
 ]}, {path:'admin',component:AdminLayoutComponent,canActivate:[AdminGuard],children:[
