@@ -15,7 +15,7 @@ export class AddsessionComponent implements OnInit {
     private router:Router,
     private ngZone:NgZone,
     private classCrudServicesService: ClassCrudServicesService
-  ) { 
+  ) {
      this.bookForm = this.formBiulder.group({
        name: [''],
        price: [''],
@@ -44,7 +44,7 @@ export class AddsessionComponent implements OnInit {
   //   });
   // }
 
-  
+
 
   ngOnInit(): void {
   }
@@ -61,6 +61,15 @@ export class AddsessionComponent implements OnInit {
     formData.append('image', this.bookForm.get('fileSource')?.value);
     formData.append('price', this.bookForm.get('price')?.value);
     formData.append('Duaration', this.bookForm.get('Duaration')?.value);
+
+    formData.append('name', this.bookForm.get('name')?.value);
+    formData.append('Day', this.bookForm.get('Day')?.value);
+    formData.append('Time', this.bookForm.get('Time')?.value);
+    formData.append('description', this.bookForm.get('description')?.value);
+
+    formData.append('discount', this.bookForm.get('discount')?.value);
+    formData.append('Time', this.bookForm.get('Time')?.value);
+
     formData.append('discount', this.bookForm.get('discount')?.value);
     formData.append('name', this.bookForm.get('name')?.value);
     formData.append('Day', this.bookForm.get('Day')?.value);

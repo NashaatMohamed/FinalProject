@@ -41,6 +41,51 @@ export class HomeComponent implements OnInit {
     this.showproducts();
   }
 
+  favoriteProducts:any[]=[];
+
+  add(prd:any){
+
+    if('favorite' in localStorage){
+      this.favoriteProducts = JSON.parse(localStorage.getItem('favorite')!);
+      let exist =this.favoriteProducts.find(item => item.id == prd.id);
+      if(exist){
+        alert('product is already exists in favorite')
+      }else{
+      this.favoriteProducts.push(prd);
+    localStorage.setItem('favorite',JSON.stringify(this.favoriteProducts));
+      }
+
+    }else{
+      this.favoriteProducts.push(prd);
+      localStorage.setItem('favorite',JSON.stringify(this.favoriteProducts));
+
+
+    }
+
+  }
+
+  cartProducts:any[]=[];
+
+  addcart(prd:any){
+
+    if('shoppingcart' in localStorage){
+      this.cartProducts = JSON.parse(localStorage.getItem('shoppingcart')!);
+      let exist =this.cartProducts.find(item => item.id == prd.id);
+      if(exist){
+        alert('product is already exists in shopingcart')
+      }else{
+      this.cartProducts.push(prd);
+    localStorage.setItem('shoppingcart',JSON.stringify(this.cartProducts));
+      }
+
+    }else{
+      this.cartProducts.push(prd);
+      localStorage.setItem('shoppingcart',JSON.stringify(this.cartProducts));
+
+
+    }
+
+  }
 
 
 }

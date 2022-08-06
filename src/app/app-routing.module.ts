@@ -24,6 +24,15 @@ import { SingleWorkoutComponent } from './components/single-workout/single-worko
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { WorkoutDetailsComponent } from './components/workout-details/workout-details.component';
 import { ExerciseDetailsComponent } from './components/exercise-details/exercise-details.component';
+import { FoodColoriesComponent } from './components/food-colories/food-colories.component';
+import { SingleWorkoutCategoryComponent } from './components/views/admin/single-workout-category/single-workout-category.component';
+import { AddSigleWorkoutCategoryComponent } from './components/views/admin/add-sigle-workout-category/add-sigle-workout-category.component';
+import { ExerciesComponent } from './components/views/admin/exercies/exercies.component';
+import { AddExerciesComponent } from './components/views/admin/add-exercies/add-exercies.component';
+import { FoodsComponent } from './components/views/admin/foods/foods.component';
+import { AddFoodComponent } from './components/views/admin/add-food/add-food.component';
+import { EditFoodComponent } from './components/views/admin/edit-food/edit-food.component';
+
 import { AdminGuard } from './admin.guard';
 import { AddsessionComponent } from './components/views/admin/addsession/addsession.component';
 import { UpdateSessionComponent } from './components/views/admin/update-session/update-session.component';
@@ -33,6 +42,9 @@ import { UpdatemembershipComponent } from './components/views/admin/updatemember
 import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
 import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
 import { CommentComponent } from './components/comment/comment.component';
+
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:"",redirectTo:'home',pathMatch:'full'},//Default Path
@@ -49,6 +61,8 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:"classes/next-2-day's-classes",component:Next2DaysClassesComponent,canActivate: [ExpenseGuard],},
   {path:'about',component:AboutComponent},
   {path:'trainers',component:TrainerComponent,canActivate: [ExpenseGuard],},
+  {path:'trainerdetails',component:TrainerDetailComponent,canActivate: [ExpenseGuard],},
+  {path:'shop',component:ShopComponent,},
   {path:'trainerdetails/:id',component:TrainerDetailComponent,canActivate: [ExpenseGuard],},
   {path:'shop',component:ShopComponent,canActivate: [ExpenseGuard],},
 
@@ -56,11 +70,18 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'membership',component:MembershipComponent,canActivate: [ExpenseGuard],},
   {path:"single-workout",component:SingleWorkoutComponent},
   {path:"wishlist",component:WishlistComponent},
-  {path:"single-workout/workout-details",component:WorkoutDetailsComponent},
-  {path:"single-workout/workout-details/exercise-details",component:ExerciseDetailsComponent},
+  {path:"single-workout/workout-details/:id",component:WorkoutDetailsComponent},
+  {path:"single-workout/workout-details/exercise-details/:id",component:ExerciseDetailsComponent},
   /*****/
   {path:'comments',component:CommentComponent},
   {path:'comment/:id',component:CommentComponent},
+
+  // ////////
+  {path:'food',component:FoodColoriesComponent},
+
+
+  {path:"favorite",component:FavoriteComponent},
+  {path:"shoppingcart",component:ShoppingcartComponent},
 
 
 ]}, {path:'admin',component:AdminLayoutComponent,canActivate:[AdminGuard],children:[
@@ -71,6 +92,19 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'addproduct',loadChildren:()=>import('./components/views/admin/addproduct/addproduct.module').then(m=>m.AddproductModule)},
   {path:'sessions',loadChildren:()=>import('./components/views/admin/sessions/sessions.module').then(m=>m.SessionsModule)},
   {path:'trainers',loadChildren:()=>import('./components/views/admin/trainers/trainers.module').then(m=>m.TrainersModule)},
+  // {path:'calculator',loadChildren:()=>import('./components/calculator/calculator.module').then(m=>m.CalculatorModule)},
+// {path:'login',loadChildren:()=>import('./components/views/admin/adminlogin/adminlogin.module').then(m=>m.AdminloginModule)}
+
+{path:'singleWorkout',component:SingleWorkoutCategoryComponent},
+{path:'addSigleWorkout',component:AddSigleWorkoutCategoryComponent},
+{path:'exercies',component:ExerciesComponent},
+{path:'addExercies',component:AddExerciesComponent},
+{path:'foods',component:FoodsComponent},
+{path:'add-food',component:AddFoodComponent},
+{path:'edit-food/:id',component:EditFoodComponent},
+
+
+
   {path:'addSession',component:AddsessionComponent},
   {path:'classes/edit/:id',component:UpdateSessionComponent},
   {path:'addmember',component:AddmemberComponent},

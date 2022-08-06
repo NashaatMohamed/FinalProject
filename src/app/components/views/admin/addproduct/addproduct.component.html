@@ -1,22 +1,28 @@
- <form class="p-4">
 
-
-
+ <form class="p-4" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="Price" class="form-label">name</label>
+    <input type="text" class="form-control"  formControlName="name" >
+  </div>
 <div class="mb-3">
   <label for="Price" class="form-label">Price</label>
-  <input type="text" class="form-control" id="Price" >
+  <input type="number" class="form-control"  formControlName="price" >
 </div>
 <div class="mb-3">
   <label for="Amount" class="form-label">Amount</label>
-  <input type="text" class="form-control" id="Amount" >
+  <input type="number" class="form-control" formControlName="amount" >
 </div>
 <div class="mb-3">
   <label for="Details" class="form-label">Details </label>
-  <input type="text" class="form-control" id="details">
+  <textarea  class="form-control"  formControlName="details" ></textarea>
 </div>
 <div class="mb-3">
-  <label for="image" class="form-label">Image </label>
-  <input type="file" (change)="onfileSelected($event)" id="image">
+  <label for="category_id" class="form-label">product category </label>
+  <input type="number" class="form-control"  formControlName="category_id" >
 </div>
- <!-- <buttone type="button " (click)="uploadimege">Upload</buttone> -->
+<div class="mb-3">
+  <label for="fileSource" class="form-label">Image </label>
+  <input type="file" (change)="onFileChange($event)" formControlName="fileSource" >
+</div>
+<button  type="submit" class="btn btn-primary">Add Product</button>
 </form>

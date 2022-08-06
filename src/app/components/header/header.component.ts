@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  
+
   isSignedIn!: boolean;
   constructor(
     private auth: AuthStateService,
@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
   // Signout
   signOut() {
     this.auth.setAuthState(false);
+    window.localStorage.clear();
     this.token.removeToken();
     this.router.navigate(['login']);
   }
