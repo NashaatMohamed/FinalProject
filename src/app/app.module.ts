@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,13 +8,11 @@ import { BodyComponent } from './components/body/body.component';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { LayoutModule } from './layout/layout.module';
 
 
 import { CalculatorComponent } from './components/calculator/calculator.component';
 import { ClassComponent } from './components/class/class.component';
 import { AboutComponent } from './components/about/about.component';
-// import {  ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
@@ -27,7 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TrainerComponent } from './components/trainer/trainer.component';
 import { TopComponent } from './components/top/top.component';
-import { ClassDetailsComponent } from './components/class-details/class-details.component';
 import { TrainerDetailComponent } from './components/trainer-detail/trainer-detail.component';
 import { TodayClassesComponent } from './components/today-classes/today-classes.component';
 import { Next2DaysClassesComponent } from './components/next2-days-classes/next2-days-classes.component';
@@ -61,6 +57,10 @@ import { SearchComponent } from './components/search/search.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { from } from 'rxjs';
+import { BrowserModule } from '@angular/platform-browser';
+import { LayoutModule } from './layout/layout.module';
+import { ClassDetailsComponent } from './components/class-details/class-details.component';
 
 
 

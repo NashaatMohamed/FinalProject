@@ -1,8 +1,9 @@
 import { Component, OnInit ,NgZone} from '@angular/core';
 import{SingleworkoutService} from '../../services/singleworkout.service';
 import { Router ,ActivatedRoute} from '@angular/router';
-import { FormGroup,FormBuilder } from '@angular/forms';
+// import { FormGroup,FormBuilder } from '@angular/forms';
 import { ExerciesService } from 'src/app/services/exercies.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-exercise-details',

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './../../shared/auth.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+// import { FormBuilder, FormGroup } from '@angular/forms';
 import { User } from '../user-profile/user-profile.component';
+import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',

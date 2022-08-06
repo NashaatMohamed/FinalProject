@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './../../shared/auth.service';
-import { FormBuilder, FormControl, FormGroup,Validators } from '@angular/forms';
+// import { FormBuilder, FormControl, FormGroup,Validators } from '@angular/forms';
 import { TokenService } from '../../shared/token.service';
 import { AuthStateService } from '../../shared/auth-state.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',

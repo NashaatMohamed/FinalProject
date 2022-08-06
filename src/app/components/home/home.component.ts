@@ -2,9 +2,9 @@ import { Component, OnInit ,NgZone} from '@angular/core';
 import { Trainer } from 'src/app/Models/trainer';
 import { CrudTrainerService } from 'src/app/services/crud-trainer.service';
 import { LoginService } from 'src/app/services/login.service';
-import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
