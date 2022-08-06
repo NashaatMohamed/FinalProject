@@ -1,7 +1,8 @@
 import { Component, OnInit ,NgZone} from '@angular/core';
 import{ProductService} from '../../../../services/product.service';
 import { Router } from '@angular/router';
-import { FormGroup,FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+// import { FormGroup,FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -11,6 +12,8 @@ export class ProductsComponent implements OnInit {
   product:FormGroup;
 // productDirectorypath:any='http://127.0.0.1:8000/public/assets/images/products';
 products:any;
+imagepath:any="http://localhost:8000/assets/";
+
   constructor(private productservice:ProductService,
               public formbuider:FormBuilder,
               private router:Router,
@@ -52,5 +55,15 @@ products:any;
   ngOnInit(): void {
     this.showproducts();
    }
+
+
+///////////////////
+delete(id:any,i:any){
+   console.log(id);
+   this.productservice.deleteProduct(id).subscribe(res=>{
+     console.log(res);
+     this.products.splice(i,1);
+   })
+}
 
 }

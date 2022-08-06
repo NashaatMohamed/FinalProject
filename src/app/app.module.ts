@@ -15,7 +15,7 @@ import { LayoutModule } from './layout/layout.module';
 import { CalculatorComponent } from './components/calculator/calculator.component';
 import { ClassComponent } from './components/class/class.component';
 import { AboutComponent } from './components/about/about.component';
-import {  ReactiveFormsModule,FormsModule } from '@angular/forms';
+// import {  ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
@@ -40,6 +40,15 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { WorkoutDetailsComponent } from './components/workout-details/workout-details.component';
 import { ExerciseDetailsComponent } from './components/exercise-details/exercise-details.component';
 import { CommonModule } from '@angular/common';
+import { FoodColoriesComponent } from './components/food-colories/food-colories.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { SingleWorkoutCategoryComponent } from './components/views/admin/single-workout-category/single-workout-category.component';
+import { AddSigleWorkoutCategoryComponent } from './components/views/admin/add-sigle-workout-category/add-sigle-workout-category.component';
+import { ExerciesComponent } from './components/views/admin/exercies/exercies.component';
+import { AddExerciesComponent } from './components/views/admin/add-exercies/add-exercies.component';
+import { FoodsComponent } from './components/views/admin/foods/foods.component';
+import { AddFoodComponent } from './components/views/admin/add-food/add-food.component';
+import { EditFoodComponent } from './components/views/admin/edit-food/edit-food.component';
 import { AddsessionComponent } from './components/views/admin/addsession/addsession.component';
 import { UpdateSessionComponent } from './components/views/admin/update-session/update-session.component';
 import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
@@ -51,6 +60,7 @@ import { AllmymemberComponent } from './components/views/admin/allmymember/allmy
 import { SearchComponent } from './components/search/search.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -69,9 +79,8 @@ import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.co
     AboutComponent,
     SigninComponent,
     SignupComponent,
-   
+
     UserProfileComponent,
-   
     AdminloginComponent,
     TrainerComponent,
     TopComponent,
@@ -86,6 +95,15 @@ import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.co
     WorkoutDetailsComponent,
     ExerciseDetailsComponent,
     ClassComponent,
+    FoodColoriesComponent,
+    SingleWorkoutCategoryComponent,
+    AddSigleWorkoutCategoryComponent,
+    ExerciesComponent,
+    AddExerciesComponent,
+    FoodsComponent,
+    AddFoodComponent,
+    EditFoodComponent,
+
     AddsessionComponent,
     UpdateSessionComponent,
     AddrainerComponent,
@@ -101,35 +119,32 @@ import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.co
   ],
   imports: [
     AppRoutingModule,
-    ReactiveFormsModule,
-     HttpClientModule,
      BrowserModule,
     LayoutModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     CommonModule,
-
-
+    NgxPaginationModule,
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AdminInterceptor,
       multi: true,
-    
-  
-  
+
+
+
     },
     {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true,
-  
+
 
 
   }],
- 
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

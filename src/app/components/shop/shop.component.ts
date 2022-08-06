@@ -1,7 +1,11 @@
-import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ProductService } from 'src/app/services/product.service';
 import { Component, OnInit ,NgZone} from '@angular/core';
+import{SingleworkoutService} from '../../services/singleworkout.service';
+import { Router ,ActivatedRoute} from '@angular/router';
+// import { FormGroup,FormBuilder } from '@angular/forms';
+import { CategoryService } from 'src/app/services/category.service';
+import { ProductService } from 'src/app/services/product.service';
+import { leadingComment } from '@angular/compiler';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-shop',
@@ -9,29 +13,104 @@ import { Component, OnInit ,NgZone} from '@angular/core';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  // product:FormGroup;
+  categories:any;
+  // selectedCatId:number=0;
+  imagepath:any="http://localhost:8000/assets/";
+
   products:any;
-
-  constructor(private productservice:ProductService,
-    public formbuider:FormBuilder,
+  constructor(private SingleworkoutService:SingleworkoutService,
+    private formbuilde:FormBuilder,
     private router:Router,
-    private ngZone:NgZone) {
+    private activatrouter:ActivatedRoute,
+    private ngZone:NgZone,
+    private categoryService:CategoryService,
+    private productservice:ProductService) { }
+
+    
 
 
-  }
 
-  showproducts(){
-    this.products=this.productservice.listproducts().subscribe(product=>{
-       this.products=product;
-       console.log(this.products);
-    },(err)=>{
-      // console.log(err);
-    })
-  }
+    allcat(){
+      this.categories=this.categoryService.allCategories().subscribe(category=>{
+         this.categories=category;
+         console.log(this.categories);
+      },(err)=>{
+        // console.log(err);
+      })
+    }
 
-  ngOnInit(): void {
-    this.showproducts();
-  }
+
+
+
+
+
+
+    // show all products function
+    showproducts(){
+      this.products=this.productservice.listproducts().subscribe(product=>{
+         this.products=product;
+         console.log(this.products);
+      },(err)=>{
+        // console.log(err);
+      })
+    }
+
+
+  fiterCategory(event:any){
+      let value=event.target.value;
+      if (value==0){
+        this.showproducts()
+      }else{
+          console.log(value);
+     this.getProductsCategory(value);
+      }
+
+
+    }
+
+
+getProductsCategory(id:any){
+  this.productservice.getproductByCategory(id).subscribe(res=>{
+    this.products=res;
+
+  })
+
+}
+
+
+
+
+    ngOnInit(): void {
+      this.showproducts();
+      this.allcat();
+     }
+
+
+
+  // product:FormGroup;
+  // products:any;
+
+  // constructor(
+  //   private productservice:ProductService,
+  //   public formbuider:FormBuilder,
+  //   private router:Router,
+  //   private ngZone:NgZone) {
+
+
+  // }
+
+  // showproducts(){
+  //   this.products=this.productservice.listproducts().subscribe(product=>{
+  //      this.products=product;
+  //      console.log(this.products);
+  //   },(err)=>{
+  //     // console.log(err);
+  //   })
+  // }
+
+  // ngOnInit(): void {
+  //   this.showproducts();
+  // }
 
   searchText:string='';
 

@@ -1,44 +1,41 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-  
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">All Trainers</h6>
         </div>
-  
+
         <div class="card-body">
             <a routerLink="/admin/addtrainer" class="btn btn-primary mb-2">Add Trainer</a>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                      <tr>
-                          <tr>
-                              <th scope="col">#</th>
-                              <th>name</th>
-                              <th>phone</th> 
-                              <th>gender</th> 
-                              <th>decription</th> 
-                          </tr>
-  
-                 
+                        <tr>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th>name</th>
+                            <th>phone</th>
+                            <th>gender</th>
+                            <th>decription</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let item of trainers; let i = index">
-                          <th scope="row">{{item.id}}</th>
+                            <th scope="row">{{item.id}}</th>
                             <td>{{item.name}}</td>
                             <td>{{item.phone}}</td>
                             <td>{{item.gender}}</td>
                             <td>{{item.decription}}</td>
-                          <td><button class="btn btn-danger" (click)="delete(item.id,i)">Delete</button></td>
-                          <td><a class="btn btn-success" [routerLink]="['/admin/trainer/edit',item.id]">Update</a></td>
+                            <td><button class="btn btn-danger" (click)="delete(item.id,i)">Delete</button></td>
+                            <td><a class="btn btn-success" [routerLink]="['/admin/trainer/edit',item.id]">Update</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-  
-  </div>
-  
+</div>

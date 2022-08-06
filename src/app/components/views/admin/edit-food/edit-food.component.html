@@ -1,0 +1,18 @@
+<form class="p-4" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+  <div class="mb-3">
+    <label for="Price" class="form-label">name</label>
+    <input type="text" class="form-control"  formControlName="name" >
+  </div>
+
+<div class="mb-3">
+  <label for="Carbohydrates" class="form-label">Carbohydrates</label>
+  <input type="number" class="form-control" formControlName="Carbohydrates" >
+</div>
+
+<div class="mb-3">
+  <label for="Calories" class="form-label">food calories</label>
+  <input type="number" class="form-control"  formControlName="Calories" >
+</div>
+
+<button  type="submit" class="btn btn-primary">update Food</button>
+</form>
