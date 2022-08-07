@@ -42,10 +42,10 @@ import { UpdatemembershipComponent } from './components/views/admin/updatemember
 import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
 import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
 import { AllmymemberComponent } from './components/views/admin/allmymember/allmymember.component';
+import { CommentComponent } from './components/comment/comment.component';
+
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
-
-
 
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:"",redirectTo:'home',pathMatch:'full'},//Default Path
@@ -78,6 +78,9 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:"single-workout/workout-details/:id",component:WorkoutDetailsComponent},
   {path:"single-workout/workout-details/exercise-details/:id",component:ExerciseDetailsComponent},
   /*****/
+  {path:'comments',component:CommentComponent},
+  {path:'comment/:id',component:CommentComponent},
+
   // ////////
   {path:'food',component:FoodColoriesComponent},
 
@@ -88,6 +91,7 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
 
 
 ]}, {path:'admin',component:AdminLayoutComponent,children:[
+]}, {path:'admin',component:AdminLayoutComponent,canActivate:[AdminGuard],children:[
   {path:'',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
   {path:'dashboard',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
 
@@ -95,9 +99,6 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'addproduct',loadChildren:()=>import('./components/views/admin/addproduct/addproduct.module').then(m=>m.AddproductModule)},
   {path:'sessions',loadChildren:()=>import('./components/views/admin/sessions/sessions.module').then(m=>m.SessionsModule)},
   {path:'trainers',loadChildren:()=>import('./components/views/admin/trainers/trainers.module').then(m=>m.TrainersModule)},
-  // {path:'calculator',loadChildren:()=>import('./components/calculator/calculator.module').then(m=>m.CalculatorModule)},
-// {path:'login',loadChildren:()=>import('./components/views/admin/adminlogin/adminlogin.module').then(m=>m.AdminloginModule)}
-
 {path:'singleWorkout',component:SingleWorkoutCategoryComponent},
 {path:'addSigleWorkout',component:AddSigleWorkoutCategoryComponent},
 {path:'exercies',component:ExerciesComponent},
@@ -105,9 +106,6 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
 {path:'foods',component:FoodsComponent},
 {path:'add-food',component:AddFoodComponent},
 {path:'edit-food/:id',component:EditFoodComponent},
-
-
-
   {path:'addSession',component:AddsessionComponent},
   {path:'classes/edit/:id',component:UpdateSessionComponent},
   {path:'addmember',component:AddmemberComponent},
@@ -116,8 +114,6 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'member/edit/:id',component:UpdatemembershipComponent},
   {path:'trainer/edit/:id',component:UpdateTrainerComponent},
   {path:'addtrainer',component:AddrainerComponent},
-  // {path:'member/edit/:id',component:UpdatemembershipComponent},trainer/edit
-
 ]} ,
 
 {path:'admin/login',component:AdminloginComponent}
@@ -125,6 +121,7 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
 
 
 
+// {path:'chat',component:ChatComponent,canActivate: [ExpenseGuard],}
 
 
 

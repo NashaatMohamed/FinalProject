@@ -58,7 +58,7 @@ export class ClassDetailsComponent implements OnInit {
     .subscribe((res)=>{
       console.log('member added successfully')
       console.log(res.id);
-      this.ngZone.run(()=> this.router.navigateByUrl('membership'))
+      this.ngZone.run(()=> this.router.navigate(['membership',this.getId]))
     },(err)=>{
       console.log(err)
     })

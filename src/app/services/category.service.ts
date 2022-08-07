@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http'
 })
 export class CategoryService {
 
-  Rest_Api:string="http://127.0.0.1:8000/api/category";
+  Rest_Api:string="http://127.0.0.1:8000/api/auth/category";
   httpHeader=new HttpHeaders().set('content-type','application/json');
 constructor(private http:HttpClient) { }
 

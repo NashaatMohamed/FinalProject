@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders,HttpErrorResponse  } from '@angular/common/http
 })
 export class SingleworkoutService {
 
-  Rest_Api:string="http://localhost:8000/api/singleworkout";
+  Rest_Api:string="http://localhost:8000/api/auth/singleworkout";
   httpHeader=new HttpHeaders().set('content-type','application/json');
 constructor(private http:HttpClient ) { }
 

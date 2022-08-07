@@ -7,8 +7,7 @@ export class User {
   address:any;
   phone:any;
   gender:any;
-  image:any;
-}
+  image?: { url: string }}
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',

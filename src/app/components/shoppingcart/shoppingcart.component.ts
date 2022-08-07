@@ -39,8 +39,9 @@ getTotal(){
   }
   let x = this.total>0?this.total:1;
   return x;
-
 }
+
+
 
 getmax(index:number){
   this.favoriteProducts[index].quantity++;

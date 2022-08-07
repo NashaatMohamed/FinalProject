@@ -47,10 +47,10 @@
     <h3 class="text-center mb-5">Meet Our Experienced<br>Cool Trainers</h3>
     <app-search (searchTextChanged)="onsearchTextEntered($event)"></app-search>
     <div class="row">
-      <div class=" col-5 section-one  m-3 " *ngFor="let Trainer of Trainers; let i = index"
-        style="position:relative ;background-color:#fff">
-        <div
-          *ngIf="searchText === '' || Trainer.name.toLowerCase().includes(searchText)|| Trainer.name.toUpperCase().includes(searchText)">
+      <ng-container *ngFor="let Trainer of Trainers; let i = index">
+        <div class=" col-5 section-one  m-3 " 
+        style="position:relative ;background-color:rgb(245, 238, 238)" *ngIf="searchText === '' || Trainer.name.toLowerCase().includes(searchText)|| Trainer.name.toUpperCase().includes(searchText)">
+        <div >
           <div class="d-flex">
             <a [routerLink]="['/trainerdetails',Trainer.id]">
               <div class=" section-one d-flex " style="position:relative ;background-color:#fff">
@@ -69,6 +69,7 @@
           </div>
         </div>
       </div>
+      </ng-container>
     </div>
   </div>
 </div>

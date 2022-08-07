@@ -53,6 +53,7 @@ import { AdminmembershipComponent } from './components/views/admin/adminmembersh
 import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
 import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
 import { AllmymemberComponent } from './components/views/admin/allmymember/allmymember.component';
+import { CommentComponent } from './components/comment/comment.component';
 import { SearchComponent } from './components/search/search.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
@@ -61,7 +62,6 @@ import { from } from 'rxjs';
 import { BrowserModule } from '@angular/platform-browser';
 import { LayoutModule } from './layout/layout.module';
 import { ClassDetailsComponent } from './components/class-details/class-details.component';
-
 
 
 
@@ -75,7 +75,7 @@ import { ClassDetailsComponent } from './components/class-details/class-details.
     HomeComponent,
     NotFoundComponent,
     CalculatorComponent,
-
+   
     AboutComponent,
     SigninComponent,
     SignupComponent,
@@ -112,6 +112,7 @@ import { ClassDetailsComponent } from './components/class-details/class-details.
     UpdatemembershipComponent,
     UpdateTrainerComponent,
     AllmymemberComponent,
+    CommentComponent,
     SearchComponent,
     FavoriteComponent,
     ShoppingcartComponent,

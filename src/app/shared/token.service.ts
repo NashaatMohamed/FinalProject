@@ -3,16 +3,28 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class TokenService {
+  // useridleData(id: any) {
+  //   throw new Error('Method not implemented.');
+  // }
   private issuer = {
     login: 'http://127.0.0.1:8000/api/auth/login',
     register: 'http://127.0.0.1:8000/api/auth/register',
   };
   constructor() {}
+
+  useridleData(userId:any){
+    localStorage.setItem('user-id',JSON.stringify(userId));
+  }
   handleData(token: any) {
     localStorage.setItem('auth_token',token);
   }
   getToken() {
     return localStorage.getItem('auth_token');
+  }
+
+  getid(){
+    return localStorage.getItem('user-id');
+
   }
   // Verify the token
   isValidToken() {

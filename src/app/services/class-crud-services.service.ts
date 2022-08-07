@@ -77,6 +77,7 @@ export class ClassCrudServicesService {
     let API_URL = `${environment.APIBaseURL}/admin/addclass`;
     return this.httpClient.post(API_URL,data).pipe(catchError(this.handleError))
   }
+  
       // update class
   updateclass(id: any, data: Classes): Observable<any> {
     console.log(data);

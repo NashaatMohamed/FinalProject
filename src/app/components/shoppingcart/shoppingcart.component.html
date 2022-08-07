@@ -29,6 +29,7 @@
         </td>
         <td>{{item.price * (item.quantity||0)}} L.E</td>
         <td><button class='btn btn-danger' (click)='deleteItem(i)'>Delete</button></td>
+        <td><button class='btn btn-danger'  [routerLink]="['/contact',item.id]">CheckOut</button></td>
 
       </tr>
 

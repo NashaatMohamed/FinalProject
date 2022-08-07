@@ -1,6 +1,6 @@
 <div class="container">
 <div class="contact">
-  <h1 class="text-center font-bold">CONTACT</h1>
+  <h1 class="text-center font-bold">Payment</h1>
   <div class="row ">
     <div class="col-4 p-5 ">
       <h5>Location:</h5>
@@ -20,21 +20,10 @@
 </div>
 
 
-<div class="main-input">
-<div class="inputs py-5 container">
-  <h3 >Send us a message:</h3>
-  <div class="d-flex justify-content-between input mt-4">
-      <input type="text" id="inputPassword6" class="form-control" placeholder="Your Name" aria-describedby="passwordHelpInline">
-      <input type="email" id="inputPassword6" class="form-control" placeholder="example@gmail.com" aria-describedby="passwordHelpInline">
-      <input type="text" id="inputPassword6" class="form-control" placeholder="Enter subject here" aria-describedby="passwordHelpInline">
-  </div>
-  <input type="text"  class="form-control message my-4" placeholder="Your Message" >
-
-  <span class="elementor-button-text btn btn-primary">Send now</span>
-
-  
-    <span class="m-2">
-      <button (click)="initializePayment(1)" class="btn btn-success">{{getmember.type}}</button>
-    </span>
+<div class="container">
+<div class="row">
+    <div class="col-8 text-center">
+      <button (click)="initializePayment(1)" class="btn btn-success col-6">{{getmember.type}}</button>
+    </div>
 </div>
 </div>

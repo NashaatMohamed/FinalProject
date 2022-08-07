@@ -45,10 +45,10 @@ export class BodyComponent implements OnInit {
       locale: 'auto',
       token: function (stripeToken: any) {
         console.log({stripeToken})
-        alert('شربتها يا كروديه :)');
+        alert('payment is Successfully:)');
       }
     });
-      this.myname = this.getmember['type']
+      this.myname = this.getmember['type'] || localStorage.getItem('price');
     paymentHandler.open({
       name: this.myname,
       description: 'ادفع يلا',

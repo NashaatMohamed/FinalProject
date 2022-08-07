@@ -52,7 +52,6 @@ export class AddrainerComponent implements OnInit {
   }
 
   onSubmit():any{
-    
     const formData :any= new FormData();
     formData.append('image', this.trainerSession.get('fileSource')?.value);
     formData.append('price', this.trainerSession.get('price')?.value);

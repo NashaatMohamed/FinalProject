@@ -7,7 +7,7 @@ import { Foods } from 'src/app/services/food';
   providedIn: 'root'
 })
 export class FoodService {
-  Rest_Api:string="http://localhost:8000/api/food";
+  Rest_Api:string="http://localhost:8000/api/auth/food";
 
   httpHeader=new HttpHeaders().set('content-type','application/json');
   constructor(private http:HttpClient) { }

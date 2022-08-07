@@ -1,3 +1,4 @@
+import { Product } from './../../services/product';
 import { Component, OnInit ,NgZone} from '@angular/core';
 import{SingleworkoutService} from '../../services/singleworkout.service';
 import { Router ,ActivatedRoute} from '@angular/router';
