@@ -52,6 +52,17 @@ import { EditFoodComponent } from './components/views/admin/edit-food/edit-food.
 import { EditProductComponent } from './components/views/admin/edit-product/edit-product.component';
 import { EditSigleWorkoutComponent } from './components/views/admin/edit-sigle-workout/edit-sigle-workout.component';
 import { EditExerciesComponent } from './components/views/admin/edit-exercies/edit-exercies.component';
+import { AddsessionComponent } from './components/views/admin/addsession/addsession.component';
+import { UpdateSessionComponent } from './components/views/admin/update-session/update-session.component';
+import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
+import { AddmemberComponent } from './components/views/admin/addmember/addmember.component';
+import { AdminmembershipComponent } from './components/views/admin/adminmembership/adminmembership.component';
+import { UpdatemembershipComponent } from './components/views/admin/updatemembership/updatemembership.component';
+import { UpdateTrainerComponent } from './components/views/admin/update-trainer/update-trainer.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { SearchComponent } from './components/search/search.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 
 
 
@@ -65,7 +76,7 @@ import { EditExerciesComponent } from './components/views/admin/edit-exercies/ed
     HomeComponent,
     NotFoundComponent,
     CalculatorComponent,
-
+   
     AboutComponent,
     SigninComponent,
     SignupComponent,
@@ -96,6 +107,20 @@ import { EditExerciesComponent } from './components/views/admin/edit-exercies/ed
     EditProductComponent,
     EditSigleWorkoutComponent,
     EditExerciesComponent,
+
+    AddsessionComponent,
+    UpdateSessionComponent,
+    AddrainerComponent,
+    AddmemberComponent,
+    AdminmembershipComponent,
+    UpdatemembershipComponent,
+    UpdateTrainerComponent,
+    CommentComponent
+
+    SearchComponent,
+    FavoriteComponent,
+    ShoppingcartComponent
+    UpdateTrainerComponent
   ],
   imports: [
     AppRoutingModule,

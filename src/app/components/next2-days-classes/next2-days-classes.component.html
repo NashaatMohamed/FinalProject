@@ -14,9 +14,9 @@
 
 <!-- classes -->
 <div class="container pb-5 pt-5">
-  <div *ngFor="let next2DayClass of Next2DayClass; let i = index" class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 pb-5">
-    <div class="col pb-4">
-      <a routerLink="/classes/details">
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 pb-5">
+    <div class="col pb-4" *ngFor="let next2DayClass of Next2DayClass; let i = index" >
+      <a [routerLink]="['/classes/details',next2DayClass.id]">
         <div style="border-radius: 0;" class="card classBorder">
           <img style="border-radius: 0;" src="assets/images/class1.jpg" class="card-img classImg img-fluid">
           <h3 class="card-title" style="color: white; position: absolute; bottom: 25%; left: 10%;">{{next2DayClass.name}}</h3>

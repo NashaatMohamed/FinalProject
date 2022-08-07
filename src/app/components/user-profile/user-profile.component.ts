@@ -4,7 +4,10 @@ import { AuthService } from './../../shared/auth.service';
 export class User {
   name: any;
   email: any;
-}
+  address:any;
+  phone:any;
+  gender:any;
+  image?: { url: string }}
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -12,10 +15,12 @@ export class User {
 })
 export class UserProfileComponent implements OnInit {
   UserProfile!: User;
+  imageuser!:User;
   constructor(public authService: AuthService) {
     this.authService.profileUser().subscribe((data: any) => {
-      this.UserProfile = data.user;
-      console.log(data.user);
+      this.UserProfile =data;
+      this.imageuser=data.image
+      
 
     });
   }

@@ -8,11 +8,20 @@ export class TokenService {
     register: 'http://127.0.0.1:8000/api/auth/register',
   };
   constructor() {}
+
+  useridleData(userId:any){
+    localStorage.setItem('user-id',JSON.stringify(userId));
+  }
   handleData(token: any) {
     localStorage.setItem('auth_token',token);
   }
   getToken() {
     return localStorage.getItem('auth_token');
+  }
+
+  getid(){
+    return localStorage.getItem('user-id');
+
   }
   // Verify the token
   isValidToken() {

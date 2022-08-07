@@ -1,8 +1,8 @@
 export interface Trainer {
-    id :BigInteger;
+  id :BigInteger;
   name :string;
   phone : string;
   gender : string;
   decription : string;
-//   session_id !:BigInteger;
+  session_id :BigInteger;
 }

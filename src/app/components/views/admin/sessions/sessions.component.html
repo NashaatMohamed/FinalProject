@@ -6,33 +6,47 @@
   <div class="card shadow mb-4">
       <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">All sessions</h6>
+          <h6 class="m-0 font-weight-bold text-primary">All Classes</h6>
       </div>
 
       <div class="card-body">
-          <a routerLink="/admin/addstudent" style="float: right;" class="btn btn-primary">Add session</a>
+          <a routerLink="/admin/addSession" class="btn btn-primary mb-2">Add session</a>
           <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>schedule time</th>
-                      <th>discound</th>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th>Name</th>
+                            <th>price</th>
+                            <th>Duaration</th>
+                            <th>discount</th>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>description</th>
+                            <th>Delete</th>      
+                            <th>Update</th>      
+                        </tr>
 
-                  </tr>
+               
                   </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>schedule time</th>
-                      <th>discound</th>
-
-                  </tr>
-                  </tfoot>
                   <tbody>
 
 
 
 
+                      <tr *ngFor="let item of classs; let i = index">
+                        <th scope="row">{{item.id}}</th>
+                          <td>{{item.name}}</td>
+                          <td>{{item.price}}</td>
+                          <td>{{item.Duaration}}</td>
+                          <td>{{item.discount}}</td>
+                          <td>{{item.Day}}</td>
+                          <td>{{item.Time}}</td>
+                          <td>{{item.description}}</td>
+                        <td><button class="btn btn-danger" (click)="delete(item.id,i)">Delete</button></td>
+                        <td><a class="btn btn-success" [routerLink]="['/admin/classes/edit',item.id]">Update</a></td>
+                      </tr>
                   </tbody>
               </table>
           </div>

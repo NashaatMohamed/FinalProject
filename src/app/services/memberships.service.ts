@@ -16,17 +16,37 @@ export class MembershipsService {
 
   // get all Memebreship
   getMemebreships():Observable<Memebership[]>{
-    return this.httpClient.get<Memebership[]>(`${environment.APIBaseURL}/auth/allmembership`);
+    return this.httpClient.get<Memebership[]>(`${environment.APIBaseURL}/allmembership`);
   }
     // get Memebreship by ID
   getMemebreship(id: any): Observable<any> {
-    let API_URL = `${environment.APIBaseURL}/auth/yourmembership/${id}`;
+    let API_URL = `${environment.APIBaseURL}/yourmembership/${id}`;
   return this.httpClient.get(API_URL, { headers: this.httpHeaders})
   .pipe(map((res:any)=>{
     return res || {}
   }),
     catchError(this.handleError))
   }
+
+  addmember(data:Memebership): Observable<any>{
+    console.log(data);
+    let API_URL = `${environment.APIBaseURL}/admin/addmembership`;
+    return this.httpClient.post(API_URL,data).pipe(catchError(this.handleError))
+  }
+
+  updatemember(id: any, data: Memebership): Observable<any> {
+    console.log(data);
+    let API_URL = `${environment.APIBaseURL}/admin/newmembership/${id}`;
+    return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
+      .pipe(catchError(this.handleError))
+  }
+    // delete Class
+  deletemember(id: any ): Observable<any> {
+    let API_URL = `${environment.APIBaseURL}/admin/delmembership/${id}`;
+    return this.httpClient.delete(API_URL,  { headers: this.httpHeaders })
+      .pipe(catchError(this.handleError))
+  }
+
 
   handleError(error:HttpErrorResponse){
     let errorMessage = '';

@@ -9,6 +9,8 @@ import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http'
 })
 export class ProductService {
 
+  Rest_Api:string="http://localhost:8000/api/auth/products";
+
   Rest_Api:string="http://localhost:8000/api/products";
   second_api:string="http://127.0.0.1:8000/api/products/category/";
 
@@ -76,14 +78,18 @@ handelerror(error:HttpErrorResponse){
 let errorMessage='';
 if(error.error instanceof ErrorEvent){
   errorMessage=error.error.message;
+    handelerror(error:HttpErrorResponse){
+    let errorMessage='';
+    if(error.error instanceof ErrorEvent){
+      errorMessage=error.error.message;
 
-}else{
-  errorMessage = `Error Code: ${error.status}\n Message: ${error.message}`
-}
-console.log(errorMessage);
-return throwError(errorMessage);
+    }else{
+      errorMessage = `Error Code: ${error.status}\n Message: ${error.message}`
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
 
-}
+    }
 
 
 

@@ -46,7 +46,7 @@ export class AdminloginComponent implements OnInit {
   }
   // Handle response
   responseHandler(data:any) {
-    this.token.handleData(data.admin.access_token);
+    this.token.handleData(data.admin.api_token);
 console.log(data);
   }
 
