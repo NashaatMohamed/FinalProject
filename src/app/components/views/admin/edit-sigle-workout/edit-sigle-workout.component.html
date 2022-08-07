@@ -1,7 +1,7 @@
 
- <form class="p-4" [formGroup]="singleWorkoutForm" (ngSubmit)="onSubmit()">
+ <form class="p-4" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
   <div class="mb-3">
-    <label for="Price" class="form-label">name</label>
+    <label for="name" class="form-label">name</label>
     <input type="text" class="form-control"  formControlName="name" >
   </div>
 <div class="mb-3">
@@ -14,9 +14,10 @@
 </div>
 
 
-<div class="mb-3">
+<!-- <div class="mb-3">
   <label for="fileSource" class="form-label">Image </label>
-  <input type="file" (change)="onFileChange($event)" formControlName="fileSource" >
-</div>
+  <input type="file" formControlName="fileSource" >
+</div> -->
 <button  type="submit" class="btn btn-primary">Add Single workout </button>
 </form>
+

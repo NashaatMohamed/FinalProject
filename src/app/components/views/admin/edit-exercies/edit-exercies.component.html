@@ -1,5 +1,5 @@
 
- <form class="p-4" [formGroup]="exerciesForm" (ngSubmit)="onSubmit()">
+ <form class="p-4" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
   <div class="mb-3">
     <label for="name" class="form-label">name</label>
     <input type="text" class="form-control"  formControlName="name" >
@@ -26,12 +26,12 @@
 </div>
 <div class="mb-3">
   <select type="text" class="form-select" [formControl]="control">
-    <option   formControlName="single" *ngFor="let item of Singleworkout" [value]="item.id">{{item.name}}</option>
+    <option   formControlName="single_workout_caregorie_id" *ngFor="let item of Singleworkout" [value]="item.id">{{item.name}}</option>
   </select>
  </div>
-<div class="mb-3">
+<!-- <div class="mb-3">
   <label for="fileSource" class="form-label">Image </label>
-  <input type="file" (change)="onFileChange($event)" formControlName="fileSource" >
-</div>
-<button  type="submit" class="btn btn-primary">Add Exercies</button>
+  <input type="file" formControlName="fileSource" >
+</div> -->
+<button  type="submit" class="btn btn-primary">update Exrcies</button>
 </form>

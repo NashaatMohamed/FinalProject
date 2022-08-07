@@ -36,6 +36,7 @@ export class SingleWorkoutCategoryComponent implements OnInit {
       console.log(res);
       this.Singleworkout.splice(i,1);
     })
+    this.showsingleWorkout();
  }
 
 

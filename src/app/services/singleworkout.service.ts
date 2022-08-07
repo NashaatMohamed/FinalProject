@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders,HttpErrorResponse  } from '@angular/common/http
 })
 export class SingleworkoutService {
 
-  Rest_Api:string="http://localhost:8000/api/singleworkout";
+  Rest_Api:string="http://127.0.0.1:8000/api/singleworkout";
   httpHeader=new HttpHeaders().set('content-type','application/json');
 constructor(private http:HttpClient ) { }
 
@@ -21,12 +21,10 @@ constructor(private http:HttpClient ) { }
 
 
     // to add single work out
-    addSingleWorkout(data:singleworkout):Observable<any>{
-      let api_url=this.Rest_Api;
-      return this.http.post(api_url,data).pipe(catchError(this.handelerror));
-      // return this.http.get<any>(this.url+'/api/products');
 
-      // return this.http.get('http://127.0.0.1:8000/api/products')
+    addSingleWorkout(data:any){
+      return this.http.post(this.Rest_Api,data).pipe(catchError(this.handelerror))
+
     }
 
 
@@ -41,14 +39,20 @@ constructor(private http:HttpClient ) { }
     }
 
 
+    // updateSingleWorkout(id:any,data:singleworkout):Observable<any>{
+    //   let api_url=`${this.Rest_Api}/${id}`;
+    //   .pipe(catchError(this.handelerror));
+    // }
+
+
+
     updateSingleWorkout(id:any,data:singleworkout):Observable<any>{
       let api_url=`${this.Rest_Api}/${id}`;
-      return this.http.put(api_url,data,{headers:this.httpHeader})
+      return this.http.post(api_url,data,{headers:this.httpHeader})
       .pipe(catchError(this.handelerror));
     }
-
 //////////////////
-  
+
     deleteSingleWorkout(id:any):Observable<any>{
       let api_url=`${this.Rest_Api}/${id}`;
       return this.http.delete(api_url,{headers:this.httpHeader})

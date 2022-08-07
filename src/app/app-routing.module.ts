@@ -32,6 +32,9 @@ import { AddExerciesComponent } from './components/views/admin/add-exercies/add-
 import { FoodsComponent } from './components/views/admin/foods/foods.component';
 import { AddFoodComponent } from './components/views/admin/add-food/add-food.component';
 import { EditFoodComponent } from './components/views/admin/edit-food/edit-food.component';
+import { EditProductComponent } from './components/views/admin/edit-product/edit-product.component';
+import { EditSigleWorkoutComponent } from './components/views/admin/edit-sigle-workout/edit-sigle-workout.component';
+import { EditExerciesComponent } from './components/views/admin/edit-exercies/edit-exercies.component';
 
 import { AdminGuard } from './admin.guard';
 import { AddsessionComponent } from './components/views/admin/addsession/addsession.component';
@@ -89,16 +92,19 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'dashboard',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
 
   {path:'products',loadChildren:()=>import('./components/views/admin/products/products.module').then(m=>m.ProductsModule)},
+  {path:'edit-product/:id',component:EditProductComponent},
+
   {path:'addproduct',loadChildren:()=>import('./components/views/admin/addproduct/addproduct.module').then(m=>m.AddproductModule)},
   {path:'sessions',loadChildren:()=>import('./components/views/admin/sessions/sessions.module').then(m=>m.SessionsModule)},
   {path:'trainers',loadChildren:()=>import('./components/views/admin/trainers/trainers.module').then(m=>m.TrainersModule)},
   // {path:'calculator',loadChildren:()=>import('./components/calculator/calculator.module').then(m=>m.CalculatorModule)},
 // {path:'login',loadChildren:()=>import('./components/views/admin/adminlogin/adminlogin.module').then(m=>m.AdminloginModule)}
-
 {path:'singleWorkout',component:SingleWorkoutCategoryComponent},
 {path:'addSigleWorkout',component:AddSigleWorkoutCategoryComponent},
+{path:'edit-sigleworkout/:id',component:EditSigleWorkoutComponent},
 {path:'exercies',component:ExerciesComponent},
 {path:'addExercies',component:AddExerciesComponent},
+{path:'edit-exercies/:id',component:EditExerciesComponent},
 {path:'foods',component:FoodsComponent},
 {path:'add-food',component:AddFoodComponent},
 {path:'edit-food/:id',component:EditFoodComponent},
@@ -113,6 +119,7 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:'trainer/edit/:id',component:UpdateTrainerComponent},
   {path:'addtrainer',component:AddrainerComponent},
   // {path:'member/edit/:id',component:UpdatemembershipComponent},trainer/edit
+
 
 ]} ,
 
