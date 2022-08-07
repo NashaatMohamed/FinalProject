@@ -17,12 +17,16 @@ export class ProductService {
 
   constructor(private http:HttpClient) { }
 
-    addproducts(data:Product):Observable<any>{
-      let api_url=this.Rest_Api;
-      return this.http.post(api_url,data).pipe(catchError(this.handelerror));
+    // addproducts(data:Product):Observable<any>{
+    //   let api_url=this.Rest_Api;
+    //   return this.http.post(api_url,data).pipe(catchError(this.handelerror));
+
+    // }
+
+    addproducts(data:any){
+      return this.http.post(this.Rest_Api,data).pipe(catchError(this.handelerror))
 
     }
-
 
 
 
@@ -38,7 +42,7 @@ export class ProductService {
 // get one product
     getproduct(id:any):Observable<any>{
       let api_url=`${this.Rest_Api}/${id}`;
-      return this.http.post(api_url,{headers:this.httpHeader})
+      return this.http.get(api_url,{headers:this.httpHeader})
       .pipe(map((res:any)=>{
         return res|| {};
       }),
@@ -56,6 +60,8 @@ export class ProductService {
       return this.http.put(api_url,data,{headers:this.httpHeader})
       .pipe(catchError(this.handelerror));
     }
+
+
 
 
 /////////////////////////////////
@@ -82,6 +88,14 @@ return throwError(errorMessage);
 
 
 
+
+
+getproductByCategory(id:any){
+  return this.http.get(this.second_api+id)
+}
+
+}
+
 // to get products by its category
 // getproductByCategory(id:any):Observable<any>{
 //   let api_url=`${this.second_api}/${id}`;
@@ -95,10 +109,3 @@ return throwError(errorMessage);
 
 
 // }
-
-
-getproductByCategory(id:any){
-  return this.http.get(this.second_api+id)
-}
-
-}

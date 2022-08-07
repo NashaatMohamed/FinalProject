@@ -4,59 +4,44 @@
 
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
-      <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">All Products</h6>
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">All Foods</h6>
+    </div>
+
+    <div class="card-body">
+      <a routerLink="/admin/addproduct" style="float: right;" class="btn btn-primary">Add Food</a>
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Calories</th>
+              <th>Carbohydrates</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let item of foods">
+
+              <td>{{item.name}}</td>
+              <td>{{item.Calories}}</td>
+              <td>{{item.Carbohydrates}}</td>
+
+              <td class=" "><button type="button" class="btn btn-danger me-3"
+                  (click)="delete(item.id,item.i)">delete</button>
+                <button type="button" class="btn btn-success" routerLink="/admin/edit-food/{{item.id}}">update</button>
+
+              </td>
+
+            </tr>
+          </tbody>
+
+
+        </table>
       </div>
-
-      <div class="card-body">
-          <a routerLink="/admin/addproduct"style="float: right;" class="btn btn-primary">Add Food</a>
-          <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                      <tr>
-                          <th>Name</th>
-                          <th>Calories</th>
-                          <th>Carbohydrates</th>
-
-
-                      </tr>
-                  </thead>
-                  <tbody >
-
-                      <tr *ngFor="let item of foods">
-
-                          <td>{{item.name}}</td>
-                          <td>{{item.Calories}}</td>
-                          <td>{{item.Carbohydrates}}</td>
-
-                          <td class=" "><button type="button" class="btn btn-danger me-3"(click)="delete(item.id,item.i)">delete</button>
-                            <button type="button" class="btn btn-success" routerLink="/admin/edit-food/{{item.id}}">update</button>
-
-                          </td>
-
-                          <!-- <td> <img src="{{item.image}}"></td> -->
-                          <!-- <td>
-                              <button class="btn btn-success" (click)="getdata(item.firstname,item.lastname,item.age,item.phone,item.email,item._id)" data-toggle="modal" data-target="#exampleModal">Update</button>
-                              <button class="btn btn-info" (click)="details(item._id)">Details</button>
-                              <button class="btn btn-danger" (click)="delete(item._id,i)">Delete</button>
-                          </td>-->
-                      </tr>
-                      </tbody>
-                   <!--   <tfoot  >
-                      <tr>
-                        <th>Name</th>
-                        <th>price</th>
-                        <th>Amount</th>
-                        <th>Details</th>
-                         <th>image</th>
-                      </tr>
-                  </tfoot>-->
-
-              </table>
-          </div>
-      </div>
+    </div>
   </div>
 
 </div>
-
-

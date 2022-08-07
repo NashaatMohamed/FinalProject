@@ -1,0 +1,12 @@
+a
+{
+  margin-top: 10px;
+  color:white;
+}
+
+a:hover{
+  color:rgb(232, 235, 196);
+}
+
+svg:hover{
+  color:rgb(232, 235, 196);}

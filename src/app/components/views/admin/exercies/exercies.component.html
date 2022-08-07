@@ -1,1 +1,53 @@
-<p>exercies works!</p>
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">All Exercieses</h6>
+    </div>
+
+    <div class="card-body">
+      <a routerLink="/admin/addExercies" style="float: right;" class="btn btn-primary">Add exercies</a>
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>singleworkout</th>
+              <th>rest</th>
+              <th>reps</th>
+              <th>sets</th>
+              <th>image</th>
+              <th>equipment</th>
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let item of exercieses">
+
+              <td>{{item.name}}</td>
+              <td>{{item.single_workout_caregorie_id}}</td>
+              <td>{{item.rest}}</td>
+              <td>{{item.reps}}</td>
+              <td>{{item.sets}}</td>
+              <td><img src="{{imagepath}}{{item.image}}" style="width:100px"></td>
+              <td>{{item.equipment}}</td>
+
+              <td class=" "><button type="button" class="btn btn-danger me-3"
+                  (click)="delete(item.id,item.i)">delete</button>
+                <button type="button" class="btn btn-success"
+                  routerLink="/admin/edit-exercies/{{item.id}}">update</button>
+
+              </td>
+
+
+
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

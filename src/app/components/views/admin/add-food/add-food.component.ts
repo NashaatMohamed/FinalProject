@@ -33,44 +33,7 @@ food =new Foods() ;
      }
 
 
-    //  onSubmit(){
-    //   this.foodservice.addFood(this.food).subscribe(res=>{
-    //      console.log(res)
-    //   })
-    // }
-
-
-  // uploadFile(event : Event){
-  //   const file = (event.target as HTMLInputElement)?.files?.[0];
-  //   this.foodForm.patchValue({
-  //     image : file
-  //   });
-  // }
-
-  // submitForm(){
-  //   const formData:any = new FormData();
-  //   formData.append("image",this.foodForm.controls['image'].value);
-  // }
-
-  // onSubmit():any{
-  //   // const formData:any = new FormData();
-  //   // formData.append("image",this.foodForm.controls['image'].value);
-
-  //   const formData :any= new FormData();
-  //   formData.append('name', this.foodForm.get('name')?.value);
-  //   formData.append('Carbohydrates', this.foodForm.get('Carbohydrates')?.value);
-  //   formData.append('Calories', this.foodForm.get('Calories')?.value);
-
-
-  //   this.foodservice.addFood(formData)
-  //   .subscribe((res)=>{
-  //     console.log('class added successfully')
-  //     console.log(res);
-  //     this.ngZone.run(()=> this.router.navigateByUrl('/admin/products'))
-  //   },(err)=>{
-  //     console.log(err)
-  //   })
-  // }
+ 
 
 
   onSubmit():any{
