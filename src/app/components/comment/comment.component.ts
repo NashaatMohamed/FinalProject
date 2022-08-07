@@ -29,6 +29,7 @@ comments:Comment[] = [];
   private session_id!: string;
   public user_id?:string;
   commentForm!: FormGroup;
+  public user_name: any;
   constructor(
     private fb: FormBuilder,
     private commentService: CommentService,
@@ -38,10 +39,12 @@ comments:Comment[] = [];
 
   ngOnInit() {
     this.user_id = localStorage.getItem('user-id') || "0";
+    this.user_name = localStorage.getItem('user-name') || "0";
+
     this.session_id = this.route.snapshot.params['id'];
     this.commentForm = this.fb.group({
       comment:[''],
-      name:[''],
+      name:this.user_name,
       session_id:this.session_id,
       user_id:this.user_id
     });
@@ -69,11 +72,16 @@ comments:Comment[] = [];
   onSubmit():any{
     this.commentService.addComment(this.commentForm.value)
     .subscribe((res)=>{
-      console.log('tcomment added successfully')
+      this.commentForm.reset();
+      alert('Thank you '),    
+
       console.log(res);
     },(err)=>{
       console.log(err)
-    })
+    }
+    
+
+    )
   }
 
 }

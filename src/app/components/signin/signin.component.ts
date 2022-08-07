@@ -12,12 +12,14 @@ import { AuthStateService } from '../../shared/auth-state.service';
 export class SigninComponent implements OnInit {
   loginForm: FormGroup;
   errors:any = null;
+ 
   constructor(
     public router: Router,
     public fb: FormBuilder,
     public authService: AuthService,
     private token: TokenService,
     private userid: TokenService,
+    private username:TokenService,
     private authState: AuthStateService
   ) {
     this.loginForm = this.fb.group({
@@ -50,6 +52,8 @@ export class SigninComponent implements OnInit {
   }
   // Handle response
   responseHandler(data:any) {
+    this.username.usernameleData(data.user.name);
+    console.log(data.user.name);
 
  this.userid.useridleData(data.user.id);
     console.log(data.user.id);

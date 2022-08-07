@@ -12,6 +12,15 @@ export class TokenService {
   useridleData(userId:any){
     localStorage.setItem('user-id',JSON.stringify(userId));
   }
+  usernameleData(username:any){   
+     localStorage.setItem('user-name',username);
+
+
+  }
+  getname(){
+    return localStorage.getItem('user-name');
+
+  }
   handleData(token: any) {
     localStorage.setItem('auth_token',token);
   }

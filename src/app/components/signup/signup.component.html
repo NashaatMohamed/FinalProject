@@ -1,9 +1,9 @@
 
-
+ 
   <div class="form-bg">
         <div class="container">
             <div class="row">
-                <div class="col-md-offset-3 col-md-6">
+            <div class="col-md-offset-3 col-md-8">
                     <div class="form-container">
                         <h3 class="title">Register</h3>
                         <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
@@ -51,7 +51,7 @@
                            <input type="text" class="form-control" formControlName="address" />
     
                             </div>
-    <div class="text-danger" *ngIf="registerForm.get('address')?.invalid && (registerForm.get('address')?.dirty || registerForm.get('address')?.touched) && registerForm.get('address')?.errors?.['required']">
+    <div class="text-danger" *ngIf="registerForm.get('address')?.errors?.['required']">
       address is required
     </div>
                              <div class="form-group">
@@ -61,7 +61,7 @@
     
                             </div>
     
-    <div class="text-danger" *ngIf="registerForm.get('gender')?.invalid && (registerForm.get('gender')?.dirty || registerForm.get('gender')?.touched) && registerForm.get('gender')?.errors?.['required']">
+    <div class="text-danger" *ngIf=" f['gender']?.errors?.['required']">
       Gender is required
     </div>
     <div class="form-group">
@@ -76,14 +76,17 @@
                                 <span class="check-label">I agree to the terms</span>
                             </div>
                             <span class="signin-link">Already have an account? Click here to <a routerLink="/login">Login</a></span>
-                            <button class="btn signup">Create Account</button>
+                            <button class="btn signup ">Create Account</button>
     
                         </form>
+    
                     </div>
                 </div>
+      
             </div>
         </div>
     </div>
     <div class="text-danger" *ngIf="!registerForm.get('email')?.errors?.['required'] && (registerForm.get('email')?.errors?.['pattern'])">
       Please enter a valid email address
     </div>
+   
