@@ -1,7 +1,9 @@
 import { Component, NgZone, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 // import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Classes } from 'src/app/Models/classes';
+import { ClassCrudServicesService } from 'src/app/services/class-crud-services.service';
 import { CrudTrainerService } from 'src/app/services/crud-trainer.service';
 
 @Component({
@@ -12,14 +14,15 @@ import { CrudTrainerService } from 'src/app/services/crud-trainer.service';
 export class UpdateTrainerComponent implements OnInit {
   getId:any;
   updateForm: FormGroup;
-
-
+  control1 = new FormControl;
+  classs:Classes[] = [];
   constructor(
     public formBiulder: FormBuilder,
     private router: Router,
     private activateRout: ActivatedRoute,
     private ngZone: NgZone,
-    private crudTrainerService: CrudTrainerService
+    private crudTrainerService: CrudTrainerService,
+    private classCrudServicesService:ClassCrudServicesService
   ) {
     this.getId = this.activateRout.snapshot.paramMap.get('id');
     this.crudTrainerService.gettrainer(this.getId).subscribe(res=>{
@@ -35,16 +38,24 @@ export class UpdateTrainerComponent implements OnInit {
 
     this.updateForm = this.formBiulder.group({
         name: [''],
-        // price: [''],
         phone: [''],
         gender:[''],
         decription:[''],
-        session_id:[''],
-    })
+        session_id:this.control1
+      })
    }
+  // ngOnInit(): void {
+  //   throw new Error('Method not implemented.');
+  // }
 
   ngOnInit(): void {
+    this.classCrudServicesService.getclasses().subscribe( res=>{
+      this.classs = res;
+      console.log(this.classs);
+    })
+    
   }
+
 
   onUpdate(): any {
     this.crudTrainerService.updatetrainer(this.getId,this.updateForm.value)

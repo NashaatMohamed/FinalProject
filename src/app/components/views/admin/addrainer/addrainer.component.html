@@ -4,9 +4,6 @@
     <label for="Price" class="form-label">name</label>
     <input type="text" class="form-control" formControlName="name" id="price" >
   </div>
-
-  
-
     <div class="mb-3">
         <label for="Price" class="form-label">phone</label>
         <input type="text" class="form-control" formControlName="phone" id="price" >
@@ -22,14 +19,14 @@
         <input type="text" class="form-control" formControlName="decription" id="price" >
       </div>
 
-      <div class="mb-3">
+      <!-- <div class="mb-3">
         <label for="Price" class="form-label">session_id</label>
         <input type="text" class="form-control" formControlName="session_id" id="price" >
-      </div>
+      </div> -->
 
       <div class="mb-3">
-      <select type="text"  [formControl]="control1" > 
-        <option formControlName="session_id" *ngFor ="let class of classs" [value]="class.id">{{class.name}}</option>
+      <select type="text"  class="form-select" [formControl]="control1" > 
+        <option formControlName="session_id"  *ngFor="let class of classs"  [value]="class.id">{{class.name}}</option>
       </select>
       </div>
 

@@ -10,6 +10,7 @@ import { ClassCrudServicesService } from 'src/app/services/class-crud-services.s
 })
 export class SessionsComponent implements OnInit {
   classs:Classes[] = [];
+  imagepath:any = "http://127.0.0.1:8000/assets/"
   constructor(private classCrudServicesService:ClassCrudServicesService,private router: Router) { }
 
   ngOnInit(): void {

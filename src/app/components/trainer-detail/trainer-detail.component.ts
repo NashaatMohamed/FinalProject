@@ -12,7 +12,7 @@ export class TrainerDetailComponent implements OnInit {
   getId:any;
   gettrainer:any;
   myname:any;
-
+  imagepath:any = "http://127.0.0.1:8000/assets/"
   
 
   constructor(private crudTrainerService:CrudTrainerService,private router: Router,private activateRout: ActivatedRoute) { 

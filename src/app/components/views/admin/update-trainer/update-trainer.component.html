@@ -22,15 +22,20 @@
           <input type="text" class="form-control" formControlName="decription" id="price" >
         </div>
   
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label for="Price" class="form-label">session_id</label>
           <input type="text" class="form-control" formControlName="session_id" id="price" >
         </div>
-  
-      <div class="mb-3">
+   -->
+   <div class="mb-3">
+    <select type="text"  class="form-select" [formControl]="control1" > 
+      <option formControlName="session_id"  *ngFor="let class of classs"  [value]="class.id">{{class.name}}</option>
+    </select>
+    </div>
+      <!-- <div class="mb-3">
         <label for="image" class="form-label">image</label>
         <input type="file" formControlName="image"  id="image">
-      </div>
+      </div> -->
       <div class="mb-3"> 
           <button type="submit" class="btn btn-primary">Update</button>
       </div>

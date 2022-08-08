@@ -6,7 +6,7 @@
   <div class="card shadow mb-4">
       <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">All sessions</h6>
-          <h6 class="m-0 font-weight-bold text-primary">All Classes</h6>
+          <!-- <h6 class="m-0 font-weight-bold text-primary">All Classes</h6> -->
       </div>
 
       <div class="card-body">
@@ -24,17 +24,12 @@
                             <th>Day</th>
                             <th>Time</th>
                             <th>description</th>
+                            <th>image</th>
                             <th>Delete</th>      
                             <th>Update</th>      
                         </tr>
-
-               
                   </thead>
                   <tbody>
-
-
-
-
                       <tr *ngFor="let item of classs; let i = index">
                         <th scope="row">{{item.id}}</th>
                           <td>{{item.name}}</td>
@@ -44,6 +39,7 @@
                           <td>{{item.Day}}</td>
                           <td>{{item.Time}}</td>
                           <td>{{item.description}}</td>
+                          <td> <img src = "{{imagepath}}{{item.image}}" width="100px"></td>
                         <td><button class="btn btn-danger" (click)="delete(item.id,i)">Delete</button></td>
                         <td><a class="btn btn-success" [routerLink]="['/admin/classes/edit',item.id]">Update</a></td>
                       </tr>

@@ -51,7 +51,7 @@ export class BodyComponent implements OnInit {
       this.myname = this.getmember['type'] || localStorage.getItem('price');
     paymentHandler.open({
       name: this.myname,
-      description: 'ادفع يلا',
+      description: 'Payment Sir :)',
       amount: amount
     });
   }

@@ -9,6 +9,7 @@ import { CrudTrainerService } from 'src/app/services/crud-trainer.service';
 })
 export class TrainerComponent implements OnInit {
   Trainers:Trainer[] = [];
+  imagepath:any = "http://127.0.0.1:8000/assets/"
   constructor(private crudTrainerService:CrudTrainerService) { }
 
   ngOnInit(): void {

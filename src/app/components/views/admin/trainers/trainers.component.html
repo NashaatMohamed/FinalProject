@@ -20,6 +20,7 @@
                             <th>phone</th>
                             <th>gender</th>
                             <th>decription</th>
+                            <th>image</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,6 +30,7 @@
                             <td>{{item.phone}}</td>
                             <td>{{item.gender}}</td>
                             <td>{{item.decription}}</td>
+                            <td><img src = "{{imagepath}}{{item.image}}" width="100px"></td>
                             <td><button class="btn btn-danger" (click)="delete(item.id,i)">Delete</button></td>
                             <td><a class="btn btn-success" [routerLink]="['/admin/trainer/edit',item.id]">Update</a>
                             </td>

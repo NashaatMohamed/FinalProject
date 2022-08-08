@@ -30,7 +30,7 @@ export class AddrainerComponent implements OnInit {
       image:[''],
       fileSource: [null],
       decription:[''],
-      session_id:2
+      session_id:this.control1
      })
   }
   
@@ -58,8 +58,8 @@ export class AddrainerComponent implements OnInit {
     formData.append('phone', this.trainerSession.get('phone')?.value);
     formData.append('gender', this.trainerSession.get('gender')?.value);
     formData.append('name', this.trainerSession.get('name')?.value);
-    formData.append('decription', this.trainerSession.get('decription'));
-    formData.append('session_id', this.trainerSession.get('session_id'));
+    formData.append('decription', this.trainerSession.get('decription')?.value);
+    formData.append('session_id', this.trainerSession.get('session_id')?.value);
     this.crudTrainerService.addtrainer(formData)
     .subscribe((res)=>{
       console.log('trainer added successfully')
