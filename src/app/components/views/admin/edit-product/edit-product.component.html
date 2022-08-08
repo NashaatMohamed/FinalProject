@@ -1,0 +1,29 @@
+<form class="p-4" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+  <div class="mb-3">
+    <label for="Price" class="form-label">name</label>
+    <input type="text" class="form-control"  formControlName="name" >
+  </div>
+<div class="mb-3">
+  <label for="Price" class="form-label">Price</label>
+  <input type="number" class="form-control"  formControlName="price" >
+</div>
+<div class="mb-3">
+  <label for="Amount" class="form-label">Amount</label>
+  <input type="number" class="form-control" formControlName="amount" >
+</div>
+<div class="mb-3">
+  <label for="Details" class="form-label">Details </label>
+  <textarea  class="form-control"  formControlName="details" ></textarea>
+</div>
+<div class="mb-3">
+  <select type="text" class="form-select" [formControl]="control">
+    <option  formControlName="category_id" *ngFor="let item of categories" [value]="item.id">{{item.name}}</option>
+  </select>
+ </div>
+ <!-- <img src ="{{imagepath}}{{categories.image}}"> -->
+<!-- <div class="mb-3">
+  <label for="fileSource" class="form-label">Image </label>
+  <input type="file" formControlName="fileSource" >
+</div> -->
+<button  type="submit" class="btn btn-primary">Add Product</button>
+</form>

@@ -28,6 +28,8 @@ export class ProductService {
 
     }
 
+    
+
 
 
 ///////////////
@@ -88,10 +90,9 @@ return throwError(errorMessage);
 
 
 
-
-
 getproductByCategory(id:any){
   return this.http.get(this.second_api+id)
 }
 
 }
+ 

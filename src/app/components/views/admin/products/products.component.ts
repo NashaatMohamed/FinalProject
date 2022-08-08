@@ -64,6 +64,8 @@ delete(id:any,i:any){
      console.log(res);
      this.products.splice(i,1);
    })
+   this.showproducts();
+
 }
 
 }

@@ -2,27 +2,35 @@
  <form class="p-4" [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <div class="mb-3">
     <label for="Price" class="form-label">name</label>
-    <input type="text" class="form-control"  formControlName="name" >
+    <input type="text" class="form-control"  formControlName="name"  required>
   </div>
 <div class="mb-3">
   <label for="Price" class="form-label">Price</label>
-  <input type="number" class="form-control"  formControlName="price" >
+  <input type="number" class="form-control"  formControlName="price" required>
 </div>
 <div class="mb-3">
   <label for="Amount" class="form-label">Amount</label>
-  <input type="number" class="form-control" formControlName="amount" >
+  <input type="number" class="form-control" formControlName="amount" required>
 </div>
 <div class="mb-3">
   <label for="Details" class="form-label">Details </label>
-  <textarea  class="form-control"  formControlName="details" ></textarea>
+  <textarea  class="form-control"  formControlName="details" required ></textarea>
 </div>
-<div class="mb-3">
+<!-- <div class="mb-3">
   <label for="category_id" class="form-label">product category </label>
   <input type="number" class="form-control"  formControlName="category_id" >
 </div>
+ -->
+
+ <div class="mb-3">
+  <select type="text" class="form-select" [formControl]="control">
+    <option  formControlName="category_id" *ngFor="let item of categories" [value]="item.id">{{item.name}}</option>
+  </select>
+ </div>
 <div class="mb-3">
   <label for="fileSource" class="form-label">Image </label>
   <input type="file" (change)="onFileChange($event)" formControlName="fileSource" >
 </div>
 <button  type="submit" class="btn btn-primary">Add Product</button>
 </form>
+

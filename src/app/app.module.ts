@@ -45,6 +45,9 @@ import { AddExerciesComponent } from './components/views/admin/add-exercies/add-
 import { FoodsComponent } from './components/views/admin/foods/foods.component';
 import { AddFoodComponent } from './components/views/admin/add-food/add-food.component';
 import { EditFoodComponent } from './components/views/admin/edit-food/edit-food.component';
+import { EditProductComponent } from './components/views/admin/edit-product/edit-product.component';
+import { EditSigleWorkoutComponent } from './components/views/admin/edit-sigle-workout/edit-sigle-workout.component';
+import { EditExerciesComponent } from './components/views/admin/edit-exercies/edit-exercies.component';
 import { AddsessionComponent } from './components/views/admin/addsession/addsession.component';
 import { UpdateSessionComponent } from './components/views/admin/update-session/update-session.component';
 import { AddrainerComponent } from './components/views/admin/addrainer/addrainer.component';
@@ -103,6 +106,9 @@ import { ClassDetailsComponent } from './components/class-details/class-details.
     FoodsComponent,
     AddFoodComponent,
     EditFoodComponent,
+    EditProductComponent,
+    EditSigleWorkoutComponent,
+    EditExerciesComponent,
 
     AddsessionComponent,
     UpdateSessionComponent,
