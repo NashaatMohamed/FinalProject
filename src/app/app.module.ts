@@ -65,6 +65,7 @@ import { from } from 'rxjs';
 import { BrowserModule } from '@angular/platform-browser';
 import { LayoutModule } from './layout/layout.module';
 import { ClassDetailsComponent } from './components/class-details/class-details.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 
 
@@ -123,6 +124,7 @@ import { ClassDetailsComponent } from './components/class-details/class-details.
     FavoriteComponent,
     ShoppingcartComponent,
     UpdateTrainerComponent,
+    DetailComponent,
   ],
   imports: [
     AppRoutingModule,

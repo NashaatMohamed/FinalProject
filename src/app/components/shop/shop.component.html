@@ -13,9 +13,9 @@
         <div class="  col-lg-4 col-md-6" *ngIf="searchText === '' || item.name.toLowerCase().includes(searchText)|| item.name.toUpperCase().includes(searchText)" >
           <div>
           <div style="background-color:rgb(250, 245, 245);text-align:center;width:100%;height:200px">
-            <img  src="{{imagepath}}{{item.image}}" style="width:100%">
+            <img   style="cursor:pointer" routerLink="Detail" style="cursor:pointer" routerLink="/shoppingdetails"src="{{imagepath}}{{item.image}}" style="width:100%">
           </div>
-  
+
           <h5 style="margin:20px 0">{{item.name}}</h5>
           <h5 style="color:#ff0336">{{item.price}}</h5>
           <h5>
@@ -37,9 +37,9 @@
               Add To Cart
             </button>
             <button (click)="add(item)" style="border:none;outline:none;background-color:#fff;"><span class="heart-sec" style="font-size:30px;color:#ff0336"><i class="bi bi-heart-fill" ></i></span></button>
-          </div> 
-   
-      <!-- <div class=" col-lg-4 col-md-6">
+          </div>
+
+      <!-- <div class=" col-lg-4 col-md-6">-->
 
         </div>
         </div>

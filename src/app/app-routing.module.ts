@@ -49,6 +49,7 @@ import { CommentComponent } from './components/comment/comment.component';
 
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:"",redirectTo:'home',pathMatch:'full'},//Default Path
@@ -77,7 +78,7 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:"wishlist",component:WishlistComponent},
   {path:"single-workout/workout-details",component:WorkoutDetailsComponent},
   {path:"single-workout/workout-details/exercise-details",component:ExerciseDetailsComponent},
-  
+
   {path:"single-workout/workout-details/:id",component:WorkoutDetailsComponent},
   {path:"single-workout/workout-details/exercise-details/:id",component:ExerciseDetailsComponent},
   /*****/
@@ -90,10 +91,11 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
 
   {path:"favorite",component:FavoriteComponent},
   {path:"shoppingcart",component:ShoppingcartComponent},
+  {path:'detail',component:DetailComponent},
 
 
 
-]}, {path:'admin',component:AdminLayoutComponent,children:[ 
+]}, {path:'admin',component:AdminLayoutComponent,children:[
   {path:'',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
   {path:'dashboard',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
 
