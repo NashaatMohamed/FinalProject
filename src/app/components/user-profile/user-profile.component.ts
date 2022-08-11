@@ -16,12 +16,11 @@ export class User {
 export class UserProfileComponent implements OnInit {
   UserProfile!: User;
   imageuser!:User;
+  imagepath:any = "http://127.0.0.1:8000/assets/"
   constructor(public authService: AuthService) {
     this.authService.profileUser().subscribe((data: any) => {
       this.UserProfile =data;
       this.imageuser=data.image
-      
-
     });
   }
   ngOnInit() {}

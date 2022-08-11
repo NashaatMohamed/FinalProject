@@ -44,7 +44,8 @@ export class ClassDetailsComponent implements OnInit {
     this.memberForm = this.formBiulder.group({
       name:[''],
       email: [''],
-      session_id:this.getId
+      session_id:this.getId,
+      user_id: localStorage.getItem('user-id')
      })
 
 

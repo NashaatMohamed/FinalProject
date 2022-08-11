@@ -3,4 +3,5 @@ export interface Member {
     name:string,
     email:string,
     session_id:any,
+    user_id:any
 }
