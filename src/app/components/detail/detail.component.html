@@ -1,0 +1,27 @@
+<div class=" products m-5 text-center p-5" >
+  <div class="" *ngFor="let prd of   favoriteProducts; let i = index">
+    <div class="d-flex justify-content-between p-5">
+    <div style="background-color:rgb(250, 245, 245);text-align:center; width:50%">
+    <img  routerLink="/shoppingdetails"src="assets/images/g_8-150x150.png">
+    </div>
+    <div  style="width:800px;padding:0 40px">
+      <h5 style="margin:20px 0" >{{prd.name}}</h5>
+      <h5 style="color:#ff0336">{{prd.price}}</h5>
+      <h5>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </h5>
+      <div>
+        Your product description, or product copy, outlines your product’s features and tells shoppers why they should buy it. A great product description indicates what the product is and what it does while enticing the reader to make a purchase.
+      </div>
+    </div>
+    </div>
+
+
+  </div>
+  </div>
+
+

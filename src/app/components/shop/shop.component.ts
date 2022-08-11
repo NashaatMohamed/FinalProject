@@ -167,4 +167,30 @@ getProductsCategory(id:any){
   }
 
 
+  detailProducts:any[]=[];
+
+  detailcart(prd:any){
+
+
+      localStorage.setItem('detail',JSON.stringify([]));
+
+    if('detail' in localStorage){
+      this.detailProducts = JSON.parse(localStorage.getItem('detail')!);
+      let exist =this.detailProducts.find(item => item.id == prd.id);
+      if(exist){
+        // alert('product is already exists in shopingcart')
+      }else{
+      this.detailProducts.push(prd);
+    localStorage.setItem('detail',JSON.stringify(this.detailProducts));
+      }
+
+    }else{
+      this.detailProducts.push(prd);
+      localStorage.setItem('detail',JSON.stringify(this.detailProducts));
+    }
+
+
+  }
+
+
 }
