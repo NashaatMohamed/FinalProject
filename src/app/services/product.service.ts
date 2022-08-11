@@ -25,7 +25,6 @@ export class ProductService {
 
     addproducts(data:any){
       return this.http.post(this.Rest_Api,data).pipe(catchError(this.handelerror))
-
     }
 
     

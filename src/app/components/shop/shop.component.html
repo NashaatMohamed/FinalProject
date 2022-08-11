@@ -12,8 +12,8 @@
       <ng-container *ngFor="let item of products">
         <div class="  col-lg-4 col-md-6" *ngIf="searchText === '' || item.name.toLowerCase().includes(searchText)|| item.name.toUpperCase().includes(searchText)" >
           <div>
-          <div style="background-color:rgb(250, 245, 245);text-align:center;width:100%;height:200px">
-            <img (click)="detailcart(item)" style="cursor:pointer" routerLink="/detail"  src="{{imagepath}}{{item.image}}" style="width:100%">
+          <div style="background-color:rgb(250, 245, 245);text-align:center;width:100%;height:100%">
+            <img (click)="detailcart(item)" style="cursor:pointer" routerLink="/detail"  src="{{imagepath}}{{item.image}}" style="width:200px" height="300px">
           </div>
   
           <h5 style="margin:20px 0">{{item.name}}</h5>

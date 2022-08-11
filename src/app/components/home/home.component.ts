@@ -14,6 +14,7 @@ import { FormBuilder } from '@angular/forms';
 export class HomeComponent implements OnInit {
   Trainers:Trainer[] = [];
   products:any;
+  imagepath:any="http://localhost:8000/assets/";
   constructor(private crudTrainerService:CrudTrainerService,
     private productservice:ProductService,
     public formbuider:FormBuilder,

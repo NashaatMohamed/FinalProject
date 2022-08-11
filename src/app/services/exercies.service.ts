@@ -9,8 +9,8 @@ import { exercise } from './exercise';
 })
 export class ExerciesService {
 
-  Rest_Api:string="http://127.0.0.1:8000/api/exercies";
-  second_api:string="http://localhost:8000/api/exercies/details";
+  Rest_Api:string="http://127.0.0.1:8000/api/auth/exercies";
+  second_api:string="http://localhost:8000/api/auth/exercies/details";
   httpHeader=new HttpHeaders().set('content-type','application/json');
 constructor(private http:HttpClient) { }
 
