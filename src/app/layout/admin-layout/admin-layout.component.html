@@ -6,10 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary d-flex">
+    <a class="navbar-brand m-2">Gymate</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" >
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle m-2" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="btn btn-outline-primary nav-link dropdown-item" (click)="signOut()" routerLink="/admin/login" *ngIf="isSignedIn">Log out</a>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <div class="container-fluid mt-4">
 
@@ -195,9 +213,7 @@
                   d="M240.5 224H352C365.3 224 377.3 232.3 381.1 244.7C386.6 257.2 383.1 271.3 373.1 280.1L117.1 504.1C105.8 513.9 89.27 514.7 77.19 505.9C65.1 497.1 60.7 481.1 66.59 467.4L143.5 288H31.1C18.67 288 6.733 279.7 2.044 267.3C-2.645 254.8 .8944 240.7 10.93 231.9L266.9 7.918C278.2-1.92 294.7-2.669 306.8 6.114C318.9 14.9 323.3 30.87 317.4 44.61L240.5 224z" />
               </svg> <span>Add food</span></a>
           </li>
-
           <!-- Divider -->
-
         </ul>
       </div>
       <div class="content col-9 ms-4">
@@ -207,6 +223,7 @@
         <!-- /.container-fluid -->
       </div>
     </div>
+    
   </div>
 
 </body>

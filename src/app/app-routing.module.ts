@@ -98,7 +98,7 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
 
 
 
-]}, {path:'admin',component:AdminLayoutComponent,children:[
+]}, {path:'admin',component:AdminLayoutComponent,canActivate: [AdminGuard],children:[
   {path:'',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
   {path:'dashboard',loadChildren:()=>import('./components/views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
 
