@@ -1,6 +1,7 @@
 <div class="container m-5">
   <h1>Shopping Cart</h1>
   <button class="btn btn-success my-5" (click)="clearProducts()">clear all products</button>
+  <button class='btn btn-danger my-5' [routerLink]="['/shopPayment']" style="float: right;">CheckOut</button>
 
   <table class="table bg-light p-5">
     <thead>
@@ -29,11 +30,7 @@
         </td>
         <td>{{item.price * (item.quantity||0)}} L.E</td>
         <td><button class='btn btn-danger' (click)='deleteItem(i)'>Delete</button></td>
-        <td><button class='btn btn-danger'  (click)="initializePayment(1)">CheckOut</button></td>
-
       </tr>
-
-
     </tbody>
   </table>
 

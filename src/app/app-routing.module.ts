@@ -50,6 +50,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { ShopPaymentComponent } from './components/shop-payment/shop-payment.component';
 
 const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   {path:"",redirectTo:'home',pathMatch:'full'},//Default Path
@@ -84,6 +85,8 @@ const routes:Routes = [{path:"",component: MainLayoutComponent,children:[
   /*****/
   {path:'comments',component:CommentComponent},
   {path:'comment/:id',component:CommentComponent},
+  {path:'shopPayment',component:ShopPaymentComponent},
+
 
   // ////////
   {path:'food',component:FoodColoriesComponent},

@@ -1,59 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MembershipsService } from 'src/app/services/memberships.service';
 
 @Component({
-  selector: 'app-body',
-  templateUrl: './body.component.html',
-  styleUrls: ['./body.component.css']
+  selector: 'app-shop-payment',
+  templateUrl: './shop-payment.component.html',
+  styleUrls: ['./shop-payment.component.css']
 })
-export class BodyComponent implements OnInit {
+export class ShopPaymentComponent implements OnInit {
   paymentHandler:any = null;
-  getId:any;
-  getmember:any;
-  myname:any;
-
-
-
-  constructor(private membershipsService:MembershipsService,public router: Router,private activateRout: ActivatedRoute) {
-
-    // this.getId = this.activateRout.snapshot.paramMap.get('id');
-    // this.membershipsService.getMemebreship(this.getId).subscribe(res=>{
-    //   console.log(res)
-    // });
-
-    this.activateRout.paramMap.subscribe((params)=>{
-      this.getId = params.get("id")
-    })
-
-    this.membershipsService.getMemebreship(this.getId).subscribe((data:any[])=>{
-      this.getmember = data;
-      console.log(this.getmember);
-    })
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
 
     this.invokeStripe();
   }
   initializePayment(amount: number) {
-    amount = this.getmember['price'];
-    console.log(amount);
     const paymentHandler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51LPt1HHqRgQUoXwugQh1UIh1kBMdPbOcbTcApe27Y8slCZspelwvVHN1XOKrWmKjOhnzIX8F84fG4CS4CrIfpO2C00GJRw6oTY',
       locale: 'auto',
     token: function (stripeToken: any) {
       console.log({stripeToken})
       alert('Payment make Successfully:)');
-      this.router.navigate(['home']);
     }
     });
-      this.myname = this.getmember['type'] || 'checkoutBYProduct';
     paymentHandler.open({
-      name: this.myname,
+      // name: '',
       description: 'Payment Sir :)',
-      amount: amount
+      amount: localStorage.getItem('x')
     });
   }
 
@@ -77,4 +49,5 @@ export class BodyComponent implements OnInit {
       window.document.body.appendChild(script);
     }
   }
+
 }

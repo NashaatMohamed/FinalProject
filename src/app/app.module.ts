@@ -66,6 +66,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LayoutModule } from './layout/layout.module';
 import { ClassDetailsComponent } from './components/class-details/class-details.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { ShopPaymentComponent } from './components/shop-payment/shop-payment.component';
 
 
 
@@ -125,6 +126,7 @@ import { DetailComponent } from './components/detail/detail.component';
     ShoppingcartComponent,
     UpdateTrainerComponent,
     DetailComponent,
+    ShopPaymentComponent,
   ],
   imports: [
     AppRoutingModule,

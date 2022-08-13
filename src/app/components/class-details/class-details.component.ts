@@ -45,7 +45,7 @@ export class ClassDetailsComponent implements OnInit {
       name:[''],
       email: [''],
       session_id:this.getId,
-      user_id: localStorage.getItem('user-id')
+      user_id: '5'
      })
 
 
