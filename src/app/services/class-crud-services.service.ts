@@ -57,11 +57,11 @@ export class ClassCrudServicesService {
   }
 
   getmembernumber():Observable<number>{
-    return this.httpClient.get<number>(`${environment.APIBaseURL}/auth/Countusers`);
+    return this.httpClient.get<number>(`${environment.APIBaseURL}/auth/CountMember`);
   }
 
   getusersnumber():Observable<number>{
-    return this.httpClient.get<number>(`${environment.APIBaseURL}/auth/CountMember`);
+    return this.httpClient.get<number>(`${environment.APIBaseURL}/auth/Countusers`);
   }
   // END -----------------------------------------------------------------------------
 
